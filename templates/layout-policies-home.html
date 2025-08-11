@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <!-- Logo left, icons right -->
+        <div class="site-logo"><span>AFI</span>connect</div>
+        <div class="site-header__icons">
+          <a href="#" class="site-header__item" aria-label="Messages">
+            <div class="icon-container">
+              <i class="fa-sharp fa-regular fa-envelope"></i>
+              <div class="badge"></div></div
+          ></a>
+          <a href="#" class="site-header__item" aria-label="Profile"><i class="fa-sharp fa-regular fa-comment"></i></a>
+          <a href="#" class="site-header__item" aria-label="Settings"><i class="fa-sharp fa-regular fa-gear"></i></a>
+        </div>
+      </div>
+    </header>
+    <div class="container site-content">
+      <nav class="navigation" aria-label="Primary">
+        <ul class="navigation__list">
+          <li>
+            <a href="#" class="navigation__item" aria-current="page"
+              ><i class="fa-sharp fa-regular fa-house"></i><span class="navigation__label">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item navigation__item--active"
+              ><i class="fa-sharp fa-regular fa-file-contract"></i> <span class="navigation__label">Policies</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item"
+              ><i class="fa-sharp fa-regular fa-file-invoice-dollar"></i>
+              <span class="navigation__label">Billing</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item"
+              ><i class="fa-sharp fa-regular fa-clipboard"></i> <span class="navigation__label">Claims</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item navigation__item" aria-disabled="true"
+              ><i class="fa-sharp fa-regular fa-star"></i> <span class="navigation__label">Featured</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Your Policies</h1>
+          </div>
+        </header>
+
+        <section class="alerts" role="region" aria-label="Notifications">
+          <div class="alert alert--default" data-alert>
+            <div class="alert__content">
+              <div class="alert__title">Upcoming Payment</div>
+              <div class="alert__description">Your auto policy payment is due soon.</div>
+            </div>
+            <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+          </div>
+        </section>
+
+        <section class="policies-container">
+          <a href="/policy/HO123456789" class="policy-card policy-card--active">
+            <div class="policy-card__icon">
+              <i class="fa-regular fa-sharp fa-house"></i>
+            </div>
+            <div class="policy-card__content">
+              <div class="policy-card__meta">
+                <span class="policy-card__type">Homeowner</span>
+                <span class="policy-card__number">(HO123456789)</span>
+                <div class="tag tag--error">Past Due</div>
+              </div>
+
+              <div class="policy-card__address">
+                12500 Knollwood Dr,<br />
+                Leavenworth, KS 66048-7259
+              </div>
+              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+            </div>
+            <div class="policy-card__chevron">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </a>
+
+          <a href="/policy/HO123456789" class="policy-card policy-card--active">
+            <div class="policy-card__icon">
+              <i class="fa-regular fa-sharp fa-car"></i>
+            </div>
+            <div class="policy-card__content">
+              <div class="policy-card__meta">
+                <span class="policy-card__type">Auto</span>
+                <span class="policy-card__number">(A123456789)</span>
+                <div class="tag">Active</div>
+              </div>
+
+              <div class="policy-card__address">
+                12500 Knollwood Dr,<br />
+                Leavenworth, KS 66048-7259
+              </div>
+              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+            </div>
+            <div class="policy-card__chevron">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </a>
+
+          <a href="/policy/HO123456789" class="policy-card policy-card--active">
+            <div class="policy-card__icon">
+              <i class="fa-regular fa-sharp fa-house"></i>
+            </div>
+            <div class="policy-card__content">
+              <div class="policy-card__meta">
+                <span class="policy-card__type">Homeowner</span>
+                <span class="policy-card__number">(HO123456789)</span>
+                <div class="tag tag--info">Upcoming</div>
+              </div>
+
+              <div class="policy-card__address">
+                12500 Knollwood Dr,<br />
+                Leavenworth, KS 66048-7259
+              </div>
+              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+            </div>
+            <div class="policy-card__chevron">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </a>
+        </section>
+      </main>
+    </div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

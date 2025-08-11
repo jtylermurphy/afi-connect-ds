@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alert Component Demo</title>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="./asset/css/component-alert.css" />
+  </head>
+  <body>
+    <p><a href="../../index.html">Back to Index</a></p>
+    <h2>Default Alert</h2>
+    <div class="alert alert--default" data-alert>
+      <div class="alert__content">
+        <div class="alert__title">Upcoming Payment</div>
+        <div class="alert__description">Your auto policy payment is due soon.</div>
+      </div>
+      <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+    </div>
+
+    <h2>Critical Alert</h2>
+    <div class="alert alert--critical" data-alert role="alert">
+      <i class="alert__icon fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+
+      <div class="alert__content">
+        <div class="alert__title">Payment Overdue</div>
+        <div class="alert__description">Your home policy payment is past due.</div>
+      </div>
+      <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+    </div>
+
+    <h2>Success Alert</h2>
+    <div class="alert alert--success" data-alert role="alert">
+      <i class="alert__icon fa-solid fa-circle-check" aria-hidden="true"></i>
+
+      <div class="alert__content">
+        <div class="alert__title">Payment Received</div>
+        <div class="alert__description">Your auto policy payment has been processed.</div>
+      </div>
+      <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+    </div>
+
+    <script src="./asset/js/component-alert.js"></script>
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </body>
+</html>

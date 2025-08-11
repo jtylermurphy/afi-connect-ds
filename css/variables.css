@@ -1,0 +1,130 @@
+:root {
+  /* ---------------------------- 
+  Color Variables 
+  ------------------------------*/
+
+  /* Base */
+  --afids-color-white: #ffffff;
+  --afids-color-black: #000000;
+
+  /* Yellow */
+  --afids-color-yellow-50: #fff4d6;
+  --afids-color-yellow-100: #fff0c7;
+  --afids-color-yellow-200: #ffe69e;
+  --afids-color-yellow-300: #ffdb75;
+  --afids-color-yellow-400: #ffcc3d;
+  --afids-color-yellow-500: #ffbd04;
+  --afids-color-yellow-600: #f0b100;
+  --afids-color-yellow-700: #e0a500;
+  --afids-color-yellow-800: #cc9600;
+  --afids-color-yellow-900: #b88700;
+  --afids-color-yellow-950: #ad8000;
+
+  /* Red */
+  --afids-color-red-50: #fef6f7;
+  --afids-color-red-100: #fde8ea;
+  --afids-color-red-200: #faccd1;
+  --afids-color-red-300: #f6acb4;
+  --afids-color-red-400: #f17e8a;
+  --afids-color-red-500: #e93346;
+  --afids-color-red-600: #dd182c;
+  --afids-color-red-700: #c11527;
+  --afids-color-red-800: #a11120;
+  --afids-color-red-900: #730c17;
+  --afids-color-red-950: #530911;
+
+  /* Green */
+  --afids-color-green-50: #e8fcf0;
+  --afids-color-green-100: #d1fae1;
+  --afids-color-green-200: #95f3bb;
+  --afids-color-green-300: #30e879;
+  --afids-color-green-400: #17d362;
+  --afids-color-green-500: #14b554;
+  --afids-color-green-600: #12a54d;
+  --afids-color-green-700: #108e42;
+  --afids-color-green-800: #0d7737;
+  --afids-color-green-900: #0a5728;
+  --afids-color-green-950: #06371a;
+
+  /* Blue */
+  --afids-color-blue-50: #f1f6fd;
+  --afids-color-blue-100: #e3edfc;
+  --afids-color-blue-200: #c8dbf9;
+  --afids-color-blue-300: #a3c3f5;
+  --afids-color-blue-400: #7aa8f0;
+  --afids-color-blue-500: #4083ea;
+  --afids-color-blue-600: #2c76e8;
+  --afids-color-blue-700: #1863d8;
+  --afids-color-blue-800: #1350af;
+  --afids-color-blue-900: #0e3b81;
+  --afids-color-blue-950: #092653;
+
+  /* Grey */
+  --afids-color-grey-00: #ffffff;
+  --afids-color-grey-50: #f7f7f8;
+  --afids-color-grey-100: #e9eaed;
+  --afids-color-grey-200: #d2d5da;
+  --afids-color-grey-300: #b9bdc6;
+  --afids-color-grey-400: #949ba8;
+  --afids-color-grey-500: #6a7282;
+  --afids-color-grey-600: #5e6573;
+  --afids-color-grey-700: #525965;
+  --afids-color-grey-800: #454254;
+  --afids-color-grey-900: #223138;
+  --afids-color-grey-950: #25272d;
+  --afids-color-grey-1000: #000000;
+
+  /* AFI Brand Colors 
+  --------------------------------*/
+  /* AFI Blue */
+  --afids-color-brand-blue-50: #f0f8ff;
+  --afids-color-brand-blue-100: #d7edfe;
+  --afids-color-brand-blue-200: #afdbfd;
+  --afids-color-brand-blue-300: #79c2fc;
+  --afids-color-brand-blue-400: #33a2fa;
+  --afids-color-brand-blue-500: #0570c5;
+  --afids-color-brand-blue-600: #0566b3;
+  --afids-color-brand-blue-700: #04589a;
+  --afids-color-brand-blue-800: #03477c;
+  --afids-color-brand-blue-900: #02335a;
+  --afids-color-brand-blue-950: #022846;
+
+  /* AFI Dark Blue */
+  --afids-color-brand-dark-blue-50: #ebf7ff;
+  --afids-color-brand-dark-blue-100: #d1edff;
+  --afids-color-brand-dark-blue-200: #94d6ff;
+  --afids-color-brand-dark-blue-300: #4dbbff;
+  --afids-color-brand-dark-blue-400: #008ee6;
+  --afids-color-brand-dark-blue-500: #004976;
+  --afids-color-brand-dark-blue-600: #00426b;
+  --afids-color-brand-dark-blue-700: #003c61;
+  --afids-color-brand-dark-blue-800: #002942;
+  --afids-color-brand-dark-blue-900: #001c2e;
+  --afids-color-brand-dark-blue-950: #001c2e;
+
+  /* AFI Red */
+  --afids-color-brand-red-50: #fcf2f3;
+  --afids-color-brand-red-100: #fae6e6;
+  --afids-color-brand-red-200: #f3c9ca;
+  --afids-color-brand-red-300: #eca7a9;
+  --afids-color-brand-red-400: #e37d80;
+  --afids-color-brand-red-500: #cb2c30;
+  --afids-color-brand-red-600: #b8282c;
+  --afids-color-brand-red-700: #a32327;
+  --afids-color-brand-red-800: #861d20;
+  --afids-color-brand-red-900: #601517;
+  --afids-color-brand-red-950: #320b0c;
+
+  /* AFI Dark Red */
+  --afids-color-brand-dark-red-50: #fcf2f3;
+  --afids-color-brand-dark-red-100: #f9e1e4;
+  --afids-color-brand-dark-red-200: #f3c3c8;
+  --afids-color-brand-dark-red-300: #ec9da5;
+  --afids-color-brand-dark-red-400: #df5d6a;
+  --afids-color-brand-dark-red-500: #881b26;
+  --afids-color-brand-dark-red-600: #7b1822;
+  --afids-color-brand-dark-red-700: #6f161f;
+  --afids-color-brand-dark-red-800: #4d0f15;
+  --afids-color-brand-dark-red-900: #330a0e;
+  --afids-color-brand-dark-red-950: #330a0e;
+}

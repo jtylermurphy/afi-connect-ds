@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+
+  --color-primary: var(--afids-color-brand-blue-500);
+
+  --site-header-icon-color: var(--afids-color-grey-500);
+  --site-header-icon-hover-color: var(--afids-color-brand-dark-blue-500);
+  /* Spacing */
+
+  /* Shadows */
+
+  /* Borders */
+  --afids-border-width-none: 0px;
+  --afids-border-width-thin: 1px;
+  --afids-border-width-medium: 2px;
+  --afids-border-width-thick: 4px;
+
+  /* Border Radius */
+  --afids-radius-none: 0px;
+  --afids-radius-sm: 0.25rem;
+  --afids-radius-md: 0.5rem;
+  --afids-radius-lg: 0.75rem;
+  --afids-radius-xl: 1.25rem;
+  --afids-radius-full: 100%;
+  --afids-radius-pill: 15rem;
+
+  /* Widths */
+  --container-width: 1140px;
+  --sidebar-width: 200px;
+}

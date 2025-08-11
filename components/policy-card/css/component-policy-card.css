@@ -1,0 +1,101 @@
+.policy-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid #e0e0e0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.policy-card:hover {
+  background: #f0f4ff;
+}
+
+.policy-card__icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--icon-bg, #004976);
+  color: white;
+  border-radius: var(--afids-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+.policy-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.policy-card__meta {
+  font-weight: 600;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.policy-card__type {
+  color: #004976;
+}
+
+.policy-card__number {
+  color: #707070;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.policy-card__address {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.policy-card__term {
+  font-size: 0.75rem;
+  color: #707070;
+}
+
+.policy-card__chevron {
+  padding-left: 0.5rem;
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: #e9e9e9;
+  border-radius: 0.25rem;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #333;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 1px solid #d0d0d0;
+}
+
+.tag--error {
+  background: #ffebee;
+  color: #d32f2f;
+  border-color: #ffcdd2;
+}
+
+.tag--info {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-color: #bbdefb;
+}

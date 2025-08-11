@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo left, icons right -->
+        <div class="site-logo"><span>AFI</span>connect</div>
+        <div class="site-header__icons">
+          <a href="#" class="site-header__item" aria-label="Messages">
+            <div class="icon-container">
+              <i class="fa-sharp fa-regular fa-envelope"></i>
+              <div class="badge"></div></div
+          ></a>
+          <a href="#" class="site-header__item" aria-label="Profile"><i class="fa-sharp fa-regular fa-comment"></i></a>
+          <a href="#" class="site-header__item" aria-label="Settings"><i class="fa-sharp fa-regular fa-gear"></i></a>
+        </div>
+      </div>
+    </header>
+    <div class="site-content">
+      <nav class="navigation" aria-label="Primary">
+        <ul class="navigation__list">
+          <li>
+            <a href="#" class="navigation__item navigation__item--active" aria-current="page"
+              ><i class="fa-sharp fa-regular fa-house"></i><span class="navigation__label">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item"
+              ><i class="fa-sharp fa-regular fa-file-contract"></i> <span class="navigation__label">Policies</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item"
+              ><i class="fa-sharp fa-regular fa-file-invoice-dollar"></i>
+              <span class="navigation__label">Billing</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item"
+              ><i class="fa-sharp fa-regular fa-clipboard"></i> <span class="navigation__label">Claims</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navigation__item navigation__item" aria-disabled="true"
+              ><i class="fa-sharp fa-regular fa-star"></i> <span class="navigation__label">Featured</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Good Afternoon, Tyler</h1>
+            <p class="page-header__meta">Member Number: #99999 &nbsp; | &nbsp; Last login: 06/01/2025 09:59 PM CST</p>
+          </div>
+
+          <div class="page-header__weather">
+            <div class="weather-widget">
+              <div class="weather-widget__info">
+                <div class="weather-widget__location">Leavenworth, KS</div>
+                <div class="weather-widget__temp">
+                  <span class="weather-widget__number">72</span>°<span class="weather-widget__unit">F</span>
+                </div>
+              </div>
+              <div class="weather-widget__icon">
+                <!-- Placeholder icon: use any SVG or Font Awesome -->
+                <i class="fa-regular fa-cloud-showers"></i>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="alerts" role="region" aria-label="Notifications">
+          <div class="alert alert--default" data-alert>
+            <div class="alert__content">
+              <div class="alert__title">Upcoming Payment</div>
+              <div class="alert__description">Your auto policy payment is due soon.</div>
+            </div>
+            <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+          </div>
+        </section>
+
+        <h2>How can we help you today?</h2>
+        <section class="dashboard-actions">
+          <div class="action-list is-desktop-hidden">
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">View Policies</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">Make a Policy Change</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">Make a payment</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">File a claim</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">View SCA Balance</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+
+            <div class="action-list-item" role="button" tabindex="0">
+              <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span class="action-list-item__label">Start a Quote</span>
+              <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="dashboard-actions__grid is-mobile-hidden">
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-file-lines"></i></div>
+              <div class="action-card__label">View Policies</div>
+            </a>
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-pen-to-square"></i></div>
+              <div class="action-card__label">Make a Policy Change</div>
+            </a>
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-credit-card"></i></div>
+              <div class="action-card__label">Make a Payment</div>
+            </a>
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-file-shield"></i></div>
+              <div class="action-card__label">File a Claim</div>
+            </a>
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-wallet"></i></div>
+              <div class="action-card__label">View SCA Balance</div>
+            </a>
+            <a href="#" class="action-card">
+              <div class="action-card__icon"><i class="fa-regular fa-sharp fa-clipboard-list"></i></div>
+              <div class="action-card__label">Start a Quote</div>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/js/script.js"></script>
+  </body>
+</html>

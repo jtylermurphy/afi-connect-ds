@@ -1,0 +1,77 @@
+.site-header {
+  height: 3.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container-width, 1140px); /* NEEDS TO BE A VARIABLE */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #881b26;
+}
+
+.site-logo span {
+  color: #004976;
+  font-weight: 900;
+}
+
+.site-header__icons {
+  display: flex;
+  gap: 0rem;
+  font-size: 1.125rem;
+}
+.site-header__item {
+  color: var(--site-header-icon-color, #666);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+}
+
+.site-header__item:hover {
+  color: var(--site-header-icon-hover-color, #004976);
+  background-color: rgba(238, 238, 238, 0.75);
+}
+
+/* New: tightly wraps icon + badge */
+.icon-container {
+  position: relative;
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon-container i {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+/* Badge anchored relative to icon */
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  pointer-events: none;
+  display: block;
+}

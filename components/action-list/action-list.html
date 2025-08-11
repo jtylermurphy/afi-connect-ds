@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Action List Demo</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p><a href="/index.html">Back to Index</a></p>
+    <div class="action-list">
+      <div class="action-list-item" role="button" tabindex="0">
+        <span class="action-list-item__label">Item without Icon</span>
+        <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </div>
+
+      <div class="action-list-item" role="button" tabindex="0">
+        <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+        <span class="action-list-item__label">Item with Icon</span>
+        <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </div>
+
+      <div class="action-list-item action-list-item--disabled" role="button" tabindex="-1" aria-disabled="true">
+        <i class="action-list-item__icon fa-solid fa-lock" aria-hidden="true"></i>
+        <span class="action-list-item__label">Unavailable right now</span>
+        <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <script>
+      // Prevent interaction with disabled items
+      document.querySelectorAll('.action-list-item[aria-disabled="true"]').forEach((item) => {
+        item.addEventListener("click", (e) => e.preventDefault());
+        item.addEventListener("keydown", (e) => e.preventDefault());
+      });
+
+      // Add keyboard click behavior for focusable items
+      document.querySelectorAll('.action-list-item[tabindex="0"]').forEach((item) => {
+        item.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            item.click();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
