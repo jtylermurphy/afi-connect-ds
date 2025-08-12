@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p><a href="/index.html">Back to Index</a></p>
+
+    <div class="container">
+      <!-- Primary (default size) -->
+      <h4>Primary Button</h4>
+      <button class="btn btn--primary">Billing & Payments</button>
+
+      <!-- Secondary -->
+      <h4>Secondary Button</h4>
+      <button class="btn btn--secondary">Update Account</button>
+
+      <!-- Outline -->
+      <h4>Outline Button</h4>
+      <button class="btn btn--outline">View Details</button>
+
+      <!-- Subtle / Tertiary -->
+      <h4>Subtle Button</h4>
+      <button class="btn btn--subtle">Remind me later</button>
+
+      <!-- Destructive -->
+      <h4>Destructive Button</h4>
+      <button class="btn btn--destructive">Cancel Policy</button>
+
+      <!-- Link-style button -->
+      <h4>Link Button</h4>
+      <button class="btn btn--link">See all documents</button>
+
+      <!-- Block (full width) -->
+      <h4>Block (full width) Button</h4>
+      <button class="btn btn--primary btn--block">Continue</button>
+
+      <!-- Sizes -->
+      <h4>Button Sizes</h4>
+      <button class="btn btn--primary btn--sm">Small</button>
+      <button class="btn btn--primary btn--lg">Large</button>
+
+      <!-- With icons (uses Font Awesome here, but any icon works) -->
+      <h4>Button with Icons</h4>
+      <button class="btn btn--outline">
+        <i class="btn__icon fa-regular fa-file-lines" aria-hidden="true"></i>
+        Policy Documents
+      </button>
+
+      <button class="btn btn--primary">
+        Billing
+        <i class="btn__icon btn__icon--after fa-regular fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <!-- Icon-only (give it an aria-label) -->
+      <button class="btn btn--outline btn--icon-only" aria-label="Open settings">
+        <i class="fa-regular fa-gear" aria-hidden="true"></i>
+      </button>
+
+      <!-- Loading (aria-busy + spinner) -->
+      <h4>Loading Button</h4>
+      <button class="btn btn--primary is-loading" aria-busy="true" disabled>Saving…</button>
+
+      <!-- Disabled -->
+      <h4>Disabled Button</h4>
+      <button class="btn btn--primary" disabled>Disabled</button>
+    </div>
+  </body>
+</html>

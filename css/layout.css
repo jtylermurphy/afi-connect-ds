@@ -1,5 +1,5 @@
 /* Page-level grid: header + body */
-body {
+body[data-layout="page"] {
   display: grid;
   grid-template-rows: 60px 1fr;
   min-height: 100vh;

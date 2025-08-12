@@ -1,0 +1,214 @@
+/* ============ Button Component ============ */
+:root {
+  --btn-radius: var(--afids-radius-pill);
+
+  --focus-ring: 0 0 0 3px rgba(5, 112, 197, 0.25);
+}
+
+.btn {
+  --_bg: var(--color-neutral-100);
+  --_fg: var(--color-neutral-900);
+  --_bd: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  height: 2.5rem; /* 40px */
+  padding-inline: 1rem; /* 16px */
+  border-radius: var(--btn-radius);
+  border: 2px solid var(--_bd);
+  background: var(--_bg);
+  color: var(--_fg);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.02s ease;
+}
+
+/* Focus visibility */
+.btn:focus {
+  outline: none;
+}
+.btn:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* Press state micro-feedback */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Disabled */
+.btn[disabled],
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.btn--sm {
+  height: 2rem;
+  padding-inline: 0.75rem;
+  font-size: 0.875rem;
+}
+.btn--lg {
+  height: 3rem;
+  padding-inline: 1.25rem;
+  font-size: 1.25rem;
+}
+
+/* Block */
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+/* Variants */
+.btn--primary {
+  --_bg: var(--color-primary);
+  --_fg: var(--color-white);
+  --_bd: var(--color-primary);
+}
+.btn--primary:hover {
+  background: var(--color-primary-700);
+  border-color: var(--color-primary-700);
+}
+
+.btn--secondary {
+  --_bg: #C9DEF1;
+  --_fg: var(--color-primary-700);
+  --_bd: transparent);
+}
+/* Secondary: mid-tint fill + border + subtle elevation */
+
+.btn--secondary:hover {
+  background: #c6ddf7;
+  border-color: #7eaee0;
+}
+.btn--secondary:active {
+  background: #b7d2f2;
+}
+@media (prefers-contrast: more) {
+  .btn--secondary {
+    --_bg: #c0d9f5;
+    --_bd: #6ea3db;
+  }
+}
+
+.btn--outline {
+  --_bg: var(--color-white);
+  --_fg: var(--color-primary);
+  --_bd: var(--color-primary);
+}
+.btn--outline:hover {
+  background: #f3f8fe;
+}
+
+.btn--subtle {
+  --_bg: var(--color-neutral-100);
+  --_fg: var(--color-neutral-900);
+  --_bd: var(--color-neutral-200);
+}
+.btn--subtle:hover {
+  background: #eef0f2;
+}
+
+.btn--destructive {
+  --_bg: var(--color-danger);
+  --_fg: var(--color-white);
+  --_bd: var(--color-danger);
+}
+.btn--destructive:hover {
+  background: var(--color-danger-700);
+  border-color: var(--color-danger-700);
+}
+
+.btn--link {
+  --_bg: transparent;
+  --_fg: var(--color-primary);
+  --_bd: transparent;
+  padding-inline: 0;
+  height: auto;
+  border: 0;
+}
+.btn--link:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.btn__icon {
+  font-size: 1em;
+  line-height: 1;
+}
+.btn__icon--after {
+  margin-left: 0.25rem;
+}
+
+/* Icon-only buttons (square) */
+.btn--icon-only {
+  width: 2.5rem;
+  padding: 0;
+  justify-content: center;
+}
+
+/* Loading state */
+.btn.is-loading {
+  position: relative;
+  pointer-events: none;
+}
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  right: 0.75rem; /* spinner sits at the end; adjust for icon-only below */
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: btn-spin 0.6s linear infinite;
+}
+.btn.is-loading.btn--icon-only::after {
+  right: calc(50% - 0.5rem);
+} /* center for icon-only */
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  .btn:active {
+    transform: none;
+  }
+  .btn.is-loading::after {
+    animation-duration: 1.2s;
+  }
+}
+
+/* Dark mode (optional; tune to your palette) */
+@media (prefers-color-scheme: dark) {
+  .btn--outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .btn--subtle {
+    --_bg: #1f2328;
+    --_fg: #e7e9ec;
+    --_bd: #2a2f36;
+  }
+  .btn--subtle:hover {
+    background: #262b31;
+  }
+}

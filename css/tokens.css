@@ -2,6 +2,16 @@
   /* Colors */
 
   --color-primary: var(--afids-color-brand-blue-500);
+  --color-primary-700: #004976;
+  --color-primary-100: #e6f1fb;
+  --color-danger: #cb2c30;
+  --color-danger-700: #881b26;
+  --color-neutral-900: #1a1a1a;
+  --color-neutral-700: #4a4a4a;
+  --color-neutral-500: #8b8f94;
+  --color-neutral-200: #e6e7ea;
+  --color-neutral-100: #f5f6f7;
+  --color-white: #fff;
 
   --site-header-icon-color: var(--afids-color-grey-500);
   --site-header-icon-hover-color: var(--afids-color-brand-dark-blue-500);
