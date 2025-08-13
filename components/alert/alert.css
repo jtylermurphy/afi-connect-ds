@@ -25,7 +25,6 @@
 .alert__description {
   margin: 0.25rem 0 0;
   font-size: 0.875rem;
-  color: #666;
 }
 
 .alert__icon {
@@ -37,7 +36,7 @@
 .alert__close {
   background: transparent;
   border: none;
-  color: #999;
+  color: var(--color-neutral-500) !important;
   font-size: 1.25rem;
   line-height: 1;
   padding: 0;
@@ -48,11 +47,11 @@
 .alert--default {
   border-color: #e0e0e0; /* Light gray border */
   background-color: #ffffff; /* White background */
-  color: #333333; /* Primary text */
+  color: var(--afids-color-text); /* Primary text */
 }
 
 .alert--default .alert__description {
-  color: #666666; /* Muted secondary text */
+  /*color: var(--afids-color-text-muted); /* Muted secondary text */
 }
 
 .alert--critical {

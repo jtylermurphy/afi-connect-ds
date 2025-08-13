@@ -1,0 +1,57 @@
+.subnav {
+  display: grid;
+  gap: 8px;
+}
+.subnav[data-orientation="horizontal"] {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+.subnav[data-orientation="vertical"] {
+  grid-auto-flow: row;
+}
+
+.subnav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Variants */
+.subnav[data-variant="pills"] .subnav__link {
+  background: rgba(0, 0, 0, 0.05);
+}
+.subnav[data-variant="pills"] .subnav__link[aria-current="page"] {
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.subnav[data-variant="underline"] .subnav__link {
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+.subnav[data-variant="underline"] .subnav__link[aria-current="page"] {
+  border-color: currentColor;
+  font-weight: 600;
+}
+
+.subnav__link i {
+  font-size: 1rem;
+}
+
+/* Optional: horizontal overflow on small screens */
+@media (max-width: 767px) {
+  .subnav[data-orientation="horizontal"] {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .subnav[data-orientation="horizontal"] .subnav__link {
+    flex: 0 0 auto;
+  }
+}

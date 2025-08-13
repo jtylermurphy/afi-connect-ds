@@ -18,23 +18,55 @@ document.querySelectorAll('.action-list-item[tabindex="0"]').forEach((item) => {
 document.addEventListener("DOMContentLoaded", () => {
   const includeTargets = document.querySelectorAll("[data-include]");
 
-  includeTargets.forEach((el) => {
-    const name = el.getAttribute("data-include");
+  includeTargets.forEach(async (host) => {
+    const name = host.getAttribute("data-include");
     const file = `/demo/partials/${name}.html`;
 
-    fetch(file)
-      .then((res) => {
-        if (!res.ok) throw new Error(`Fetch failed: ${file}`);
-        return res.text();
-      })
-      .then((html) => {
-        el.innerHTML = html;
-      })
-      .catch((err) => {
-        el.innerHTML = `<div style="color:red;">Error loading ${name}</div>`;
-        console.warn(err);
-      });
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(`Fetch failed: ${file}`);
+      host.innerHTML = await res.text();
+
+      // mark active for navs
+      if (name === "nav") setActiveNav(host);
+
+      // optional: announce loaded
+      host.dispatchEvent(new CustomEvent("partial:loaded", { detail: { name } }));
+    } catch (err) {
+      host.innerHTML = `<div style="color:red;">Error loading ${name}</div>`;
+      console.warn(err);
+    }
   });
+
+  function setActiveNav(container) {
+    const want = (container.getAttribute("data-active") || "").trim().toLowerCase();
+    const links = container.querySelectorAll(".navigation__item");
+
+    // Clear any pre-baked markers
+    links.forEach((a) => {
+      a.classList.remove("navigation__item--active");
+      a.removeAttribute("aria-current");
+    });
+
+    // Make aria-disabled links inert
+    links.forEach((a) => {
+      if (a.getAttribute("aria-disabled") === "true") {
+        a.removeAttribute("href");
+        a.setAttribute("tabindex", "-1");
+      }
+    });
+
+    // No explicit target? leave all inactive
+    if (!want) return;
+
+    // Only match by data-route on the link
+    const match = Array.from(links).find((a) => (a.dataset.route || "").toLowerCase() === want);
+
+    if (match) {
+      match.classList.add("navigation__item--active");
+      match.setAttribute("aria-current", "page");
+    }
+  }
 });
 
 // Alert Close Button Functionality

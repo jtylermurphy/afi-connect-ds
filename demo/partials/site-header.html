@@ -3,15 +3,57 @@
     <div class="site-logo"><span>AFI</span>connect</div>
     <div class="site-header__icons">
       <a href="#" class="site-header__item" aria-label="Messages">
-        <i class="fa-sharp fa-regular fa-envelope"></i>
-        <div class="badge"></div>
+        <div class="icon-container">
+          <i class="fa-sharp fa-regular fa-envelope"></i>
+          <div class="badge"></div>
+        </div>
       </a>
+
       <a href="#" class="site-header__item" aria-label="Profile">
-        <i class="fa-sharp fa-regular fa-comment"></i>
+        <div class="icon-container">
+          <i class="fa-sharp fa-regular fa-comment"></i>
+        </div>
       </a>
-      <a href="#" class="site-header__item" aria-label="Settings">
-        <i class="fa-sharp fa-regular fa-gear"></i>
-      </a>
+      <div
+        class="menu"
+        data-menu
+        data-placement="bottom-end"
+        data-mobile="inline"
+        data-title="Settings"
+        data-trap="true">
+        <button
+          type="button"
+          id="menu-trigger"
+          class="site-header__item btn--icon-only menu__trigger"
+          aria-label="Settings"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-controls="settings-menu">
+          <div class="icon-container">
+            <i class="fa-sharp fa-regular fa-gear"></i>
+          </div>
+        </button>
+        <div class="menu__panel" role="menu" hidden>
+          <a href="#" class="menu__item" role="menuitem">
+            <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-solid fa-user"></i></span>
+            <span class="menu__label">Profile Settings</span>
+          </a>
+          <a href="#" class="menu__item" role="menuitem">
+            <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-bell"></i></span>
+            <span class="menu__label">Communication Settings</span>
+          </a>
+          <a href="#" class="menu__item" role="menuitem">
+            <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-lock"></i></span>
+            <span class="menu__label">Contact Us & Help</span>
+          </a>
+          <div class="menu__divider" role="separator" aria-orientation="horizontal"></div>
+
+          <button type="button" class="menu__item menu__item--danger" role="menuitem" data-action="signout">
+            <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-arrow-right-from-bracket"></i></span>
+            <span class="menu__label">Sign out</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </header>

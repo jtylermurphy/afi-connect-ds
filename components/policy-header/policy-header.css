@@ -1,0 +1,32 @@
+.policy-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  color: var(--afids-color-text, #111827);
+}
+.policy-header__icon {
+  width: 32px;
+  height: 32px;
+  color: var(--afids-color-primary-700, #004976);
+}
+.policy-header__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.policy-header__title {
+  font-size: 1.125rem;
+  margin: 0 0 0.125rem;
+  line-height: 1.2;
+}
+.policy-header__number {
+  font-size: 0.8125rem;
+  color: var(--afids-color-text-muted, #6b7280);
+}
+
+@media (min-width: 768px) {
+  .policy-header__title {
+    font-size: 1.25rem;
+  }
+}

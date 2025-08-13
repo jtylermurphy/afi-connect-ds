@@ -1,8 +1,10 @@
-@import "alert/css/component-alert.css";
-@import "navigation/css/component-navigation.css";
-@import "action-list/css/component-action-list.css";
-@import "action-card/css/component-action-card.css";
-@import "site-header/css/component-site-header.css";
-@import "weather-widget/css/component-weather-widget.css";
-@import "policy-card/css/component-policy-card.css";
+@import "action-list/action-list.css";
+@import "action-card/action-card.css";
+@import "alert/alert.css";
 @import "button/button.css";
+@import "navigation/navigation.css";
+@import "policy-card/policy-card.css";
+@import "policy-header/policy-header.css";
+@import "dropdown-menu/dropdown-menu.css";
+@import "site-header/site-header.css";
+@import "weather-widget/weather-widget.css";

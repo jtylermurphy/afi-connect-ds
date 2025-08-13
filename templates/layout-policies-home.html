@@ -8,52 +8,9 @@
     <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
   </head>
   <body data-layout="page">
-    <header class="site-header">
-      <div class="container header-container">
-        <!-- Logo left, icons right -->
-        <div class="site-logo"><span>AFI</span>connect</div>
-        <div class="site-header__icons">
-          <a href="#" class="site-header__item" aria-label="Messages">
-            <div class="icon-container">
-              <i class="fa-sharp fa-regular fa-envelope"></i>
-              <div class="badge"></div></div
-          ></a>
-          <a href="#" class="site-header__item" aria-label="Profile"><i class="fa-sharp fa-regular fa-comment"></i></a>
-          <a href="#" class="site-header__item" aria-label="Settings"><i class="fa-sharp fa-regular fa-gear"></i></a>
-        </div>
-      </div>
-    </header>
+    <include data-include="site-header"></include>
     <div class="container site-content">
-      <nav class="navigation" aria-label="Primary">
-        <ul class="navigation__list">
-          <li>
-            <a href="#" class="navigation__item" aria-current="page"
-              ><i class="fa-sharp fa-regular fa-house"></i><span class="navigation__label">Home</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="navigation__item navigation__item--active"
-              ><i class="fa-sharp fa-regular fa-file-contract"></i> <span class="navigation__label">Policies</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="navigation__item"
-              ><i class="fa-sharp fa-regular fa-file-invoice-dollar"></i>
-              <span class="navigation__label">Billing</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="navigation__item"
-              ><i class="fa-sharp fa-regular fa-clipboard"></i> <span class="navigation__label">Claims</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="navigation__item navigation__item" aria-disabled="true"
-              ><i class="fa-sharp fa-regular fa-star"></i> <span class="navigation__label">Featured</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+      <include data-active="policies" data-include="nav"></include>
 
       <main class="layout__main">
         <header class="page-header">

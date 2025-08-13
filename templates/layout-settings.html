@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="settings" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Settings</h1>
+          </div>
+        </header>
+
+        <!-- Subnav -->
+        <nav class="settings-subnav" aria-label="Settings">
+          <a href="/settings/profile" class="settings-subnav__link" data-active="true">
+            <i class="fa-regular fa-user" aria-hidden="true"></i><span>Profile</span>
+          </a>
+          <a href="/settings/communications" class="settings-subnav__link">
+            <i class="fa-regular fa-bell" aria-hidden="true"></i><span>Communications</span>
+          </a>
+          <a href="/settings/help" class="settings-subnav__link">
+            <i class="fa-regular fa-circle-question" aria-hidden="true"></i><span>Help</span>
+          </a>
+        </nav>
+
+        <!-- Content area (swap this include per page) -->
+        <section class="settings-content">
+          <include data-include="settings/profile"></include>
+        </section>
+
+        <!-- Content will go here -->
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
