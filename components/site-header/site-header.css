@@ -64,7 +64,7 @@
 }
 
 /* Badge anchored relative to icon */
-.badge {
+.site-header .badge {
   position: absolute;
   top: 0;
   right: 0;

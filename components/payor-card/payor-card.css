@@ -1,0 +1,84 @@
+/* Payor Card */
+.payor-card {
+  border: 1px solid var(--afids-color-border, #e5e7eb);
+  background: var(--ads-color-surface, #fff);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-block: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.payor__header {
+  display: grid;
+  gap: 0.75rem 1rem;
+}
+
+.payor__who .payor__name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.payor__who .payor__address {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--ads-color-text-muted, #555);
+}
+
+.payor__summary {
+  align-self: start;
+  font-size: 0.95rem;
+}
+
+.payor__status-text {
+  margin: 0;
+  color: var(--afids-color-text-muted);
+  font-size: 0.75rem;
+}
+
+.payor__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: start;
+}
+.payor__actions .btn {
+  /* Buttons inherit your DS; add minor normalization */
+  line-height: 1.1;
+  white-space: nowrap;
+  padding-inline: 0.9rem;
+  padding-block: 0.65rem;
+}
+
+/* Policy List */
+.payor__policies {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+/* ===========================
+   Responsive
+   =========================== */
+
+@media (min-width: 768px) {
+  .payor__header {
+    grid-template-columns: 1.2fr 1fr auto; /* who / summary / actions */
+    align-items: start;
+  }
+
+  .payor__actions {
+    justify-self: end;
+    align-items: end;
+  }
+
+  .payor__policies .policy {
+    grid-template-columns: auto 1fr auto; /* unchanged, but gains room */
+  }
+}
+
+/* Optional: denser layout on very wide screens */
+@media (min-width: 1120px) {
+  .payor {
+    padding: 1.25rem;
+  }
+}

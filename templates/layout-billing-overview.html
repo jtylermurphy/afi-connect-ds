@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing Overview Page</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="billing" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Billing Overview</h1>
+          </div>
+        </header>
+
+        <section class="billing" aria-labelledby="billing-title">
+          <!-- Payor Group 1 -->
+          <article class="payor-card" data-payor-id="{{ Payor Name }}">
+            <header class="payor__header">
+              <div class="payor__who">
+                <div class="payor__name">{{ Payor Name }}</div>
+                <div class="payor__address">
+                  {{Street Address}}<br />
+                  {{City}}, {{ST}} {{ZIP}}
+                </div>
+              </div>
+
+              <div class="payor__summary">
+                <p class="payor__status-text">
+                  <strong>Next payment due:</strong> {{MM/DD/YYYY}}<br /><strong>Minimum Due:</strong> {{$Amount}}.
+                </p>
+              </div>
+
+              <div class="payor__actions">
+                <a href="#" class="btn btn--link"><i class="fa-sharp fa-regular fa-file-lines"></i>View Statements</a>
+                <a href="#" class="btn btn--primary" aria-disabled="true">Pay Now</a>
+              </div>
+            </header>
+
+            <ul class="payor__policies">
+              <li>
+                <a href="/policy/HO123456789" class="policy-card policy-card--active">
+                  <div class="policy-card__icon">
+                    <i class="fa-regular fa-sharp fa-ring-diamond"></i>
+                  </div>
+                  <div class="policy-card__content">
+                    <div class="policy-card__meta">
+                      <span class="policy-card__type">Scheduled/Valuable Items</span>
+                      <span class="policy-card__number">(0716873E XC-A)</span>
+                      <div class="tag tag--default">Active</div>
+                    </div>
+
+                    <div class="policy-card__address">
+                      12500 Knollwood Dr,<br />
+                      Leavenworth, KS 66048-7259
+                    </div>
+                    <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                  </div>
+                  <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+              </li>
+              <li>
+                <a href="/policy/HO123456789" class="policy-card policy-card--active">
+                  <div class="policy-card__icon">
+                    <i class="fa-regular fa-sharp fa-umbrella"></i>
+                  </div>
+                  <div class="policy-card__content">
+                    <div class="policy-card__meta">
+                      <span class="policy-card__type">Umbrella</span>
+                      <span class="policy-card__number">(0201141 U-A)</span>
+                      <div class="tag tag--default">Active</div>
+                    </div>
+
+                    <div class="policy-card__address">
+                      12500 Knollwood Dr,<br />
+                      Leavenworth, KS 66048-7259
+                    </div>
+                    <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                  </div>
+                  <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Payor Group 2 -->
+          <article class="payor-card" data-payor-id="{{ Payor Name }}">
+            <header class="payor__header">
+              <div class="payor__who">
+                <div class="payor__name">{{ Payor Name }}</div>
+                <div class="payor__address">
+                  {{Street Address}}<br />
+                  {{City}}, {{ST}} {{ZIP}}
+                </div>
+              </div>
+
+              <div class="payor__summary"></div>
+
+              <div class="payor__actions">
+                <a href="#" class="btn btn--link"><i class="fa-sharp fa-regular fa-file-lines"></i> View Statements</a>
+              </div>
+            </header>
+
+            <ul class="payor__policies">
+              <li>
+                <a href="/policy/HO123456789" class="policy-card policy-card--active">
+                  <div class="policy-card__icon">
+                    <i class="fa-regular fa-sharp fa-home"></i>
+                  </div>
+                  <div class="policy-card__content">
+                    <div class="policy-card__meta">
+                      <span class="policy-card__type">Homeowner</span>
+                      <span class="policy-card__number">(HO12345678)</span>
+                      <div class="tag tag--success">Active</div>
+                    </div>
+
+                    <div class="policy-card__address">
+                      12500 Knollwood Dr,<br />
+                      Leavenworth, KS 66048-7259
+                    </div>
+                    <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                  </div>
+                  <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+              </li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

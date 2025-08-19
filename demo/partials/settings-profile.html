@@ -1,0 +1,153 @@
+<section class="profile" id="profile-settings">
+  <header class="settings__header">
+    <h4 class="settings__title">Profile</h4>
+    <p class="settings__desc">Review your account info. You can edit phone numbers and email addresses.</p>
+  </header>
+
+  <!-- Account owner (read-only per requirements) -->
+  <article class="card">
+    <div class="card__body profile__section">
+      <h2 class="profile__heading">Account owner</h2>
+      <dl class="profile__dl">
+        <div class="profile__row">
+          <dt>Name</dt>
+          <dd><span data-field="full_name">Jane Doe</span></dd>
+        </div>
+        <div class="profile__row">
+          <dt>Mailing address</dt>
+          <dd>
+            <address class="profile__address">
+              <span data-field="addr_line1">123 Main St</span><br />
+              <span data-field="addr_city">Jefferson City</span>,
+              <span data-field="addr_state">MO</span>
+              <span data-field="addr_zip">65101</span>
+            </address>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </article>
+
+  <!-- Contact methods (editable) -->
+  <article class="card">
+    <div class="card__body profile__section" data-contact>
+      <h2 class="profile__heading">Contact methods</h2>
+
+      <!-- Phones -->
+      <div class="profile__group">
+        <h3 class="profile__subheading">Phone numbers</h3>
+        <ul class="contact-list" data-list="phones">
+          <!-- Phone row (example) -->
+          <li class="contact-row" data-kind="phone">
+            <!-- View mode -->
+            <div class="contact-row__view" data-mode="view">
+              <span class="badge" data-field="type">Mobile</span>
+              <span class="contact-row__value" data-field="value">(555) 867-5309</span>
+              <div class="contact-row__actions">
+                <button type="button" class="btn btn--ghost btn--sm" data-edit>Edit</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-remove>Remove</button>
+              </div>
+            </div>
+
+            <!-- Edit mode -->
+            <form class="contact-row__edit" data-mode="edit" hidden>
+              <label class="sr-only" for="phone-type-1">Phone type</label>
+              <select id="phone-type-1" class="form__input contact-row__type" name="type">
+                <option>Mobile</option>
+                <option>Home</option>
+                <option>Work</option>
+              </select>
+
+              <label class="sr-only" for="phone-value-1">Phone number</label>
+              <input
+                id="phone-value-1"
+                class="form__input contact-row__input"
+                name="value"
+                type="tel"
+                inputmode="tel"
+                placeholder="(555) 555-5555"
+                required />
+
+              <div class="contact-row__actions">
+                <button type="submit" class="btn btn--primary btn--sm" data-save>Save</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-cancel>Cancel</button>
+              </div>
+            </form>
+          </li>
+        </ul>
+
+        <button type="button" class="btn btn--ghost" data-add-phone>
+          <i class="fa-regular fa-plus" aria-hidden="true"></i> Add phone
+        </button>
+      </div>
+
+      <!-- Emails -->
+      <div class="profile__group">
+        <h3 class="profile__subheading">Email address</h3>
+        <ul class="contact-list" data-list="emails">
+          <li class="contact-row" data-kind="email">
+            <div class="contact-row__view" data-mode="view">
+              <span class="badge">Email</span>
+              <span class="contact-row__value" data-field="value">jane@example.com</span>
+              <div class="contact-row__actions">
+                <button type="button" class="btn btn--ghost btn--sm" data-edit>Edit</button>
+              </div>
+            </div>
+
+            <form class="contact-row__edit" data-mode="edit" hidden>
+              <label class="sr-only" for="email-value-1">Email</label>
+              <input
+                id="email-value-1"
+                class="form__input contact-row__input"
+                name="value"
+                type="email"
+                autocomplete="email"
+                placeholder="you@domain.com"
+                required />
+              <div class="contact-row__actions">
+                <button type="submit" class="btn btn--primary btn--sm" data-save>Save</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-cancel>Cancel</button>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form__status" role="status" aria-live="polite"></div>
+    </div>
+  </article>
+
+  <!-- Template for new phone rows -->
+  <template id="tpl-phone-row">
+    <li class="contact-row" data-kind="phone">
+      <div class="contact-row__view" data-mode="view" hidden>
+        <span class="badge" data-field="type"></span>
+        <span class="contact-row__value" data-field="value"></span>
+        <div class="contact-row__actions">
+          <button type="button" class="btn btn--ghost btn--sm" data-edit>Edit</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-remove>Remove</button>
+        </div>
+      </div>
+      <form class="contact-row__edit" data-mode="edit">
+        <label class="sr-only">Phone type</label>
+        <select class="form__input contact-row__type" name="type">
+          <option>Mobile</option>
+          <option>Home</option>
+          <option>Work</option>
+        </select>
+        <label class="sr-only">Phone number</label>
+        <input
+          class="form__input contact-row__input"
+          name="value"
+          type="tel"
+          inputmode="tel"
+          placeholder="(555) 555-5555"
+          required />
+        <div class="contact-row__actions">
+          <button type="submit" class="btn btn--primary btn--sm" data-save>Save</button>
+          <button type="button" class="btn btn--ghost btn--sm" data-cancel>Cancel</button>
+        </div>
+      </form>
+    </li>
+  </template>
+</section>

@@ -74,9 +74,9 @@
 
 /* Variants */
 .btn--primary {
-  --_bg: var(--color-primary);
+  --_bg: var(--color-primary-500);
   --_fg: var(--color-white);
-  --_bd: var(--color-primary);
+  --_bd: var(--color-primary-500);
 }
 .btn--primary:hover {
   background: var(--color-primary-700);
@@ -84,15 +84,16 @@
 }
 
 .btn--secondary {
-  --_bg: #C9DEF1;
+  --_bg: var(--color-primary-200);
   --_fg: var(--color-primary-700);
   --_bd: transparent);
 }
 /* Secondary: mid-tint fill + border + subtle elevation */
 
 .btn--secondary:hover {
-  background: #c6ddf7;
+  background: var(--color-primary-200);
   border-color: #7eaee0;
+  filter:brightness(.95)
 }
 .btn--secondary:active {
   background: #b7d2f2;

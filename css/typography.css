@@ -6,7 +6,6 @@ body {
   font-family: var(--afids-font-family);
   color: var(--afids-color-text);
   line-height: var(--afids-lineheight);
-  background: linear-gradient(to bottom, #f0f5fa, #f9fafb);
 }
 
 h1 {
@@ -34,4 +33,34 @@ a {
 small,
 .text-muted {
   color: var(--afids-color-text-muted);
+}
+
+.disclaimer {
+  color: var(--afids-color-text-muted);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Key–value definition list */
+
+.kv {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  align-items: start;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.kv dt {
+  font-weight: 400;
+  color: var(--afids-color-text-muted, #555);
+  margin: 0;
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--afids-color-brand-dark-blue-500, #222);
+  font-weight: 600;
 }

@@ -1,57 +1,43 @@
+/* Base (mobile-first): horizontal pills with just a gap */
 .subnav {
-  display: grid;
-  gap: 8px;
+  --gap: 1.5rem;
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: nowrap; /* keep on one line */
+  overflow-x: auto; /* scroll if it overflows */
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  padding-bottom: 2px; /* room for underline focus rings */
+  border-bottom: 1px solid var(--color-neutral-200); /* for focus ring */
 }
-.subnav[data-orientation="horizontal"] {
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-}
-.subnav[data-orientation="vertical"] {
-  grid-auto-flow: row;
-}
-
 .subnav__link {
+  flex: 0 0 auto; /* content-sized */
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  padding: 10px 12px;
-  border-radius: 10px;
   text-decoration: none;
-  color: inherit;
+  color: var(--afids-color-link);
+  white-space: nowrap; /* keep labels intact */
 }
-
-/* Variants */
-.subnav[data-variant="pills"] .subnav__link {
-  background: rgba(0, 0, 0, 0.05);
-}
-.subnav[data-variant="pills"] .subnav__link[aria-current="page"] {
+.subnav__link[aria-current="page"] {
   background: rgba(0, 0, 0, 0.1);
   font-weight: 600;
 }
 
-.subnav[data-variant="underline"] .subnav__link {
-  border-bottom: 2px solid transparent;
-  border-radius: 0;
-}
-.subnav[data-variant="underline"] .subnav__link[aria-current="page"] {
-  border-color: currentColor;
-  font-weight: 600;
+.subnav__link[data-active="true"] {
+  color: var(--afids-color-text);
 }
 
-.subnav__link i {
-  font-size: 1rem;
-}
-
-/* Optional: horizontal overflow on small screens */
-@media (max-width: 767px) {
-  .subnav[data-orientation="horizontal"] {
-    display: flex;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+/* Desktop / large screens: vertical list (sidebar style) */
+@media (max-width: 700px) {
+  .subnav {
+    display: grid; /* stack vertically */
+    gap: 8px;
+    overflow: visible; /* no horizontal scroll */
   }
-  .subnav[data-orientation="horizontal"] .subnav__link {
-    flex: 0 0 auto;
+  .subnav__link {
+    justify-content: flex-start; /* left-align text/icons */
+    white-space: normal; /* allow wrapping if needed */
+    width: 100%; /* full-width tap area */
   }
 }

@@ -3,7 +3,12 @@
 
   --color-primary: var(--afids-color-brand-blue-500);
   --color-primary-500: var(--afids-color-brand-blue-500);
-  --color-primary-100: #e6f1fb;
+  --color-primary-700: var(--afids-color-brand-blue-700);
+  --color-primary-400: var(--afids-color-brand-blue-400);
+  --color-primary-300: var(--afids-color-brand-blue-300);
+  --color-primary-200: var(--afids-color-brand-blue-200);
+  --color-primary-100: var(--afids-color-brand-blue-100);
+  --color-primary-50: var(--afids-color-brand-blue-50);
 
   --color-danger: var(--afids-color-red-500);
   --color-danger-700: var(--afids-color-red-700);
@@ -15,14 +20,15 @@
   --color-white: #fff;
   --color-black: #000;
 
-  --afids-color-text: var(--afids-color-neutral-900);
-  --afids-color-text-weak: var(--afids-color-neutral-700);
-  --afids-color-text-muted: var(--afids-color-neutral-500);
+  --afids-color-text: var(--afids-color-grey-900);
+  --afids-color-text-weak: var(--afids-color-grey-700);
+  --afids-color-text-muted: var(--afids-color-grey-500);
 
   --afids-color-link: var(--color-primary-500);
   --afids-color-focus: rgba(5, 112, 197, 0.25);
 
   --site-header-icon-color: var(--afids-color-grey-500);
+
   --site-header-icon-hover-color: var(--afids-color-brand-dark-blue-500);
   /* Spacing */
 

@@ -14,6 +14,7 @@
 
 .alert__content {
   flex: 1;
+  gap: 0.25rem;
 }
 
 .alert__title {
@@ -23,7 +24,7 @@
 }
 
 .alert__description {
-  margin: 0.25rem 0 0;
+  margin: 0;
   font-size: 0.875rem;
 }
 
@@ -64,4 +65,8 @@
   border-color: #12b76a;
   background-color: #d1fadf;
   color: #027a48;
+}
+
+.alert--thin {
+  padding: 0.5rem 0.75rem;
 }

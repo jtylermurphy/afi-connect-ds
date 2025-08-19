@@ -1,6 +1,7 @@
 @import "variables.css";
 @import "tokens.css";
 @import "base.css";
+@import "utilities.css";
 @import "typography.css";
 @import "layout.css";
 @import "/components/components.css";
@@ -9,7 +10,7 @@ html {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 16px;
   color: #111;
-  background-color: #f9fafb;
+  /* background-color: #f9fafb; */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -106,4 +107,10 @@ h2 {
 .page-header__meta {
   font-size: 0.875rem;
   color: #7b7b7b;
+}
+
+.demo-area {
+  max-width: 908px;
+  padding; 1rem;
+  margin: 0 auto;
 }

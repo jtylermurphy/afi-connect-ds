@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payor Card</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <p><a href="/index.html">Back to Index</a></p>
+    <div class="demo-area">
+      <h4>Member = Payor example</h4>
+      <article class="payor-card" data-payor-id="{{ Payor Name }}">
+        <header class="payor__header">
+          <div class="payor__who">
+            <div class="payor__name">{{ Payor Name }}</div>
+            <div class="payor__address">
+              {{Street Address}}<br />
+              {{City}}, {{ST}} {{ZIP}}
+            </div>
+          </div>
+
+          <div class="payor__summary">
+            <p class="payor__status-text">No payment due at this time.</p>
+          </div>
+
+          <div class="payor__actions">
+            <a href="#" class="btn btn--secondary">View Statements</a>
+            <a href="#" class="btn btn--primary" aria-disabled="true">Pay Now</a>
+          </div>
+        </header>
+
+        <ul class="payor__policies">
+          <li class="policy">
+            <a href="/policy/HO123456789" class="policy-card policy-card--active">
+              <div class="policy-card__icon">
+                <i class="fa-regular fa-sharp fa-house"></i>
+              </div>
+              <div class="policy-card__content">
+                <div class="policy-card__meta">
+                  <span class="policy-card__type">Homeowner</span>
+                  <span class="policy-card__number">(HO123456789)</span>
+                  <div class="tag tag--error">Past Due</div>
+                </div>
+
+                <div class="policy-card__address">
+                  12500 Knollwood Dr,<br />
+                  Leavenworth, KS 66048-7259
+                </div>
+                <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+              </div>
+              <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+          </li>
+          <li>
+            <a href="/policy/HO123456789" class="policy-card policy-card--active">
+              <div class="policy-card__icon">
+                <i class="fa-regular fa-sharp fa-house"></i>
+              </div>
+              <div class="policy-card__content">
+                <div class="policy-card__meta">
+                  <span class="policy-card__type">Homeowner</span>
+                  <span class="policy-card__number">(HO123456789)</span>
+                  <div class="tag">Active</div>
+                </div>
+
+                <div class="policy-card__address">
+                  12500 Knollwood Dr,<br />
+                  Leavenworth, KS 66048-7259
+                </div>
+                <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+              </div>
+              <div class="policy-card__chevron">
+                Policy Details
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="/policy/HO123456789" class="policy-card policy-card--active">
+              <div class="policy-card__icon">
+                <i class="fa-regular fa-sharp fa-house"></i>
+              </div>
+              <div class="policy-card__content">
+                <div class="policy-card__meta">
+                  <span class="policy-card__type">Homeowner</span>
+                  <span class="policy-card__number">(HO123456789)</span>
+                  <div class="tag tag--info">Upcoming</div>
+                </div>
+
+                <div class="policy-card__address">
+                  12500 Knollwood Dr,<br />
+                  Leavenworth, KS 66048-7259
+                </div>
+                <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+              </div>
+              <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <h4>Member = Payor example with Payment due dates</h4>
+      <article class="payor-card" data-payor-id="{{ Payor Name }}">
+        <header class="payor__header">
+          <div class="payor__who">
+            <div class="payor__name">{{ Payor Name }}</div>
+            <div class="payor__address">
+              {{Street Address}}<br />
+              {{City}}, {{ST}} {{ZIP}}
+            </div>
+          </div>
+
+          <div class="payor__summary">
+            <p class="payor__status-text">Next payment due: {{MM/DD/YYYY}}<br />Minimum Due: {{$Amount}}.</p>
+          </div>
+
+          <div class="payor__actions">
+            <a href="#" class="btn btn--secondary">View Statements</a>
+            <a href="#" class="btn btn--primary" aria-disabled="true">Pay Now</a>
+          </div>
+        </header>
+
+        <ul class="payor__policies">
+          <li>
+            <a href="/policy/HO123456789" class="policy-card policy-card--active">
+              <div class="policy-card__icon">
+                <i class="fa-regular fa-sharp fa-house"></i>
+              </div>
+              <div class="policy-card__content">
+                <div class="policy-card__meta">
+                  <span class="policy-card__type">Homeowner</span>
+                  <span class="policy-card__number">(HO123456789)</span>
+                  <div class="tag tag--default">Active</div>
+                </div>
+
+                <div class="policy-card__address">
+                  12500 Knollwood Dr,<br />
+                  Leavenworth, KS 66048-7259
+                </div>
+                <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+              </div>
+              <div class="policy-card__chevron">Policy Details <i class="fa-solid fa-chevron-right"></i></div>
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <h4>Escrow or non-member Payor Example w/ payment information:</h4>
+      <code
+        >Escrow accounts or where the policy is under a member's name but the payor is not the member. Pay now buttons
+        don't show along with payment due dates.
+      </code>
+      <article class="payor-card" data-payor-id="{{ Payor Name }}">
+        <header class="payor__header">
+          <div class="payor__who">
+            <div class="payor__name">{{ Payor Name (Escrow Info) }}</div>
+            <div class="payor__address">
+              {{Street Address}}<br />
+              {{City}}, {{ST}} {{ZIP}}
+            </div>
+          </div>
+        </header>
+
+        <ul class="payor__policies">
+          <li>
+            <a href="/policy/HO123456789" class="policy-card policy-card--active">
+              <div class="policy-card__icon">
+                <i class="fa-regular fa-sharp fa-house"></i>
+              </div>
+              <div class="policy-card__content">
+                <div class="policy-card__meta">
+                  <span class="policy-card__type">Homeowner</span>
+                  <span class="policy-card__number">(HO123456789)</span>
+                  <div class="tag">Active</div>
+                </div>
+
+                <div class="policy-card__address">
+                  12500 Knollwood Dr,<br />
+                  Leavenworth, KS 66048-7259
+                </div>
+                <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+              </div>
+              <div class="policy-card__chevron">
+                Policy Details
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </body>
+</html>
