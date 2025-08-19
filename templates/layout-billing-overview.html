@@ -21,7 +21,7 @@
 
         <section class="billing" aria-labelledby="billing-title">
           <!-- Payor Group 1 -->
-          <article class="payor-card" data-payor-id="{{ Payor Name }}">
+          <article class="card payor-card" data-payor-id="{{ Payor Name }}">
             <header class="payor__header">
               <div class="payor__who">
                 <div class="payor__name">{{ Payor Name }}</div>
@@ -39,7 +39,9 @@
 
               <div class="payor__actions">
                 <a href="#" class="btn btn--link"><i class="fa-sharp fa-regular fa-file-lines"></i>View Statements</a>
-                <a href="#" class="btn btn--primary" aria-disabled="true">Pay Now</a>
+                <a href="/templates/layout-billing-details.html" class="btn btn--primary" aria-disabled="true"
+                  >Pay Now</a
+                >
               </div>
             </header>
 
@@ -53,7 +55,7 @@
                     <div class="policy-card__meta">
                       <span class="policy-card__type">Scheduled/Valuable Items</span>
                       <span class="policy-card__number">(0716873E XC-A)</span>
-                      <div class="tag tag--default">Active</div>
+                      <div class="tag tag--success">Active</div>
                     </div>
 
                     <div class="policy-card__address">
@@ -74,7 +76,7 @@
                     <div class="policy-card__meta">
                       <span class="policy-card__type">Umbrella</span>
                       <span class="policy-card__number">(0201141 U-A)</span>
-                      <div class="tag tag--default">Active</div>
+                      <div class="tag tag--success">Active</div>
                     </div>
 
                     <div class="policy-card__address">
@@ -90,7 +92,7 @@
           </article>
 
           <!-- Payor Group 2 -->
-          <article class="payor-card" data-payor-id="{{ Payor Name }}">
+          <article class="card payor-card" data-payor-id="{{ Payor Name }}">
             <header class="payor__header">
               <div class="payor__who">
                 <div class="payor__name">{{ Payor Name }}</div>

@@ -2,6 +2,7 @@
 @import "tokens.css";
 @import "base.css";
 @import "utilities.css";
+@import "icons.css";
 @import "typography.css";
 @import "layout.css";
 @import "/components/components.css";
@@ -92,9 +93,16 @@ h2 {
 .page-header {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page-header {
+    flex-direction: row
+  }
 }
 
 .page-header__title {

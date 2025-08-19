@@ -7,29 +7,6 @@
     <link rel="stylesheet" href="../../css/common.css" />
     <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
     <style>
-      /* Page background (matches your app) */
-      body {
-        background: linear-gradient(to bottom, #f0f5fa, #f9fafb);
-        color: #1f2937; /* neutral-800 */
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      }
-
-      /* Tokens (swap to your design tokens when ready) */
-      :root {
-        --afi-blue: #0570c5;
-        --afi-blue-700: #004976;
-        --afi-red: #cb2c30;
-
-        --text-900: #111827;
-        --text-700: #374151;
-        --text-500: #6b7280;
-        --text-400: #9aa3af;
-
-        --line: #d7dde6;
-        --bg-card: #ffffff;
-        --bg-soft: #f3f6f9;
-      }
-
       /* Layout wrapper for the page content */
       .policy-details {
         max-width: 720px;
@@ -75,36 +52,13 @@
         color: var(--text-500);
       }
 
-      /* Key/Value blocks */
-      .glance .kv {
-        margin: 1rem 0;
-      }
-      .kv__label {
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-      .kv__value {
-        color: var(--text-700);
-      }
-      .kv__note {
-        color: var(--text-400);
-        font-size: 0.8125rem;
-        margin-top: 0.25rem;
-      }
-
       /* Action buttons wrapper to match spacing in mock */
       .action {
         margin: 1rem 0 1.25rem;
       }
 
       /* Contact block */
-      .contact {
-        margin-top: 0.5rem;
-      }
-      .contact__heading {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
+
       .contact__list {
         list-style: none;
         padding: 0;
@@ -122,92 +76,7 @@
         margin-top: 0.5rem;
       }
 
-      /* Coverages */
-      .coverage-list {
-        list-style: none;
-        padding: 0;
-        margin: 0.25rem 0 1rem;
-        border-radius: 0.5rem;
-      }
-      .coverage-item {
-        padding: 0.875rem 0.75rem;
-        border-radius: 0.5rem;
-      }
-      .coverage-item + .coverage-item {
-        margin-top: 0.5rem;
-      }
-      .coverage-item--alt {
-        background: #f2f4f7;
-      } /* subtle stripe like the mock */
-      .coverage-item__label {
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-      .coverage-item__value {
-        color: var(--text-400);
-      }
-
-      /* Documents */
-      .documents__empty {
-        color: var(--text-400);
-        font-size: 0.875rem;
-        margin: 0.5rem 0 2rem;
-      }
-
       /* ---------------- Buttons (uses your earlier component API) ---------------- */
-      .btn {
-        --_bg: #eef2f7;
-        --_fg: #111827;
-        --_bd: transparent;
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-
-        font-weight: 600;
-        height: 2.5rem;
-        padding-inline: 1rem;
-        border-radius: 9999px;
-        border: 1px solid var(--_bd);
-        background: var(--_bg);
-        color: var(--_fg);
-        text-decoration: none;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-      }
-      .btn:focus {
-        outline: none;
-      }
-      .btn:focus-visible {
-        box-shadow: 0 0 0 3px rgba(5, 112, 197, 0.25);
-      }
-      .btn__icon {
-        font-size: 1em;
-        line-height: 1;
-      }
-      .btn__icon--after {
-        margin-left: 0.25rem;
-      }
-
-      /* Primary – solid brand */
-      .btn--primary {
-        --_bg: var(--afi-blue);
-        --_fg: #fff;
-      }
-      .btn--primary:hover {
-        background: var(--afi-blue-700);
-      }
-
-      /* Secondary – borderless fill that stands out on your light gradient */
-      .btn--secondary {
-        --_bg: #b1ceed; /* tested palette for your bg */
-        --_fg: #004976; /* readable over the fill */
-      }
-      .btn--secondary:hover {
-        background: #a6c6e8;
-      }
 
       /* Responsive niceties */
       @media (min-width: 768px) {
@@ -228,119 +97,139 @@
   <body data-layout="page">
     <include data-include="site-header"></include>
     <div class="site-content container">
-      <include data-include="nav"></include>
-      <main class="layout__main policy-details" id="policy-homeowner">
+      <include data-include="nav" data-active="policies"></include>
+      <main class="layout__main">
         <!-- Policy header -->
-        <section class="policy-header">
-          <div class="policy-header__icon" aria-hidden="true">
-            <!-- House icon (inline SVG so it’s themeable) -->
-            <svg viewBox="0 0 24 24" class="policy-header__svg" focusable="false" aria-hidden="true">
-              <path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z" fill="currentColor" />
-            </svg>
-          </div>
-          <div class="policy-header__text">
-            <h1 class="policy-header__title">Homeowner Policy</h1>
-            <div class="policy-header__number">HO123456789</div>
-          </div>
-        </section>
+        <header class="page-header">
+          <p class="back-link"><a href="#" aria-label="Back to Billing Overview">← Back</a></p>
 
-        <!-- At a Glance -->
-        <h2 class="section-heading">At a Glance</h2>
-        <section class="glance">
-          <div class="kv">
-            <div class="kv__label">Policy Period</div>
-            <div class="kv__value">12/29/2024 – 12/29/2025</div>
-            <div class="kv__note">Note: Disclaimer text might go here if policy needs it.</div>
-          </div>
-
-          <div class="kv">
-            <div class="kv__label">Risk Address</div>
-            <div class="kv__value">
-              12500 KNOLLWOOD DR<br />
-              LEAVENWORTH, KS 66048
+          <div class="policy-header">
+            <div class="policy-header__icon" aria-hidden="true">
+              <i class="fa-regular fa-sharp fa-house icon--large"></i>
+            </div>
+            <div class="policy-header__text">
+              <h1 class="policy-header__title">Homeowner Policy</h1>
+              <div class="policy-header__number">HO123456789</div>
             </div>
           </div>
+        </header>
 
-          <div class="kv">
-            <div class="kv__label">Total Policy Premium</div>
-            <div class="kv__value">$5,123.46</div>
+        <div class="card">
+          <div class="card__header">
+            <h2 class="card__title">At a Glance</h2>
           </div>
-
-          <div class="action">
-            <button class="btn btn--primary">
-              Billing and Payments
-              <i class="btn__icon btn__icon--after fa-regular fa-chevron-right" aria-hidden="true"></i>
-            </button>
+          <div class="card__body">
+            <section class="glance">
+              <dl class="kv">
+                <div>
+                  <dt>Policy Period</dt>
+                  <dd>{{Start Date}} – {{End Date}}</dd>
+                  <div class="disclaimer">Note: Disclaimer text might go here if policy needs it.</div>
+                </div>
+                <div>
+                  <dt>Risk Address</dt>
+                  <dd>
+                    12500 KNOLLWOOD DR<br />
+                    LEAVENWORTH, KS 66048
+                  </dd>
+                </div>
+                <div>
+                  <dt>Total Policy Premium</dt>
+                  <dd>{{ Premium Amount }}</dd>
+                </div>
+              </dl>
+              <div class="action">
+                <button class="btn btn--link"><i class="fa-regular fa-sharp fa-pencil"></i> Request Changes</button>
+                <button class="btn btn--link ml-4">
+                  <i class="fa-regular fa-sharp fa-file-invoice-dollar"></i>
+                  View Billing and Payments
+                </button>
+              </div>
+            </section>
           </div>
-        </section>
+        </div>
 
-        <!-- Contact -->
-        <section class="contact">
-          <div class="contact__heading">Contact Information</div>
-          <ul class="contact__list">
-            <li><a href="mailto:emailaddress@email.com">emailaddress@email.com</a></li>
-            <li><a href="tel:19135551234">913-555-1234</a></li>
-            <li>
-              12500 KNOLLWOOD DR<br />
-              LEAVENWORTH, KS 66048
-            </li>
-          </ul>
-
-          <div class="action">
-            <button class="btn btn--secondary">
-              Update Account
-              <i class="btn__icon btn__icon--after fa-regular fa-chevron-right" aria-hidden="true"></i>
-            </button>
+        <div class="card mt-4">
+          <div class="card__header">
+            <h2 class="card__title">Contact Information</h2>
           </div>
-        </section>
+          <div class="card__body">
+            <ul class="contact__list">
+              <li><a href="mailto:emailaddress@email.com">emailaddress@email.com</a></li>
+              <li><a href="tel:19135551234">913-555-1234</a></li>
+              <li>
+                12500 KNOLLWOOD DR<br />
+                LEAVENWORTH, KS 66048
+              </li>
+            </ul>
+            <div class="action">
+              <button class="btn btn--link">
+                <i class="fa-sharp fa-regular fa-pencil"></i>
+                Request Changes
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- Property Coverages -->
-        <h2 class="section-heading">Property Coverages</h2>
-        <section class="coverages" aria-labelledby="coverages-title">
-          <ul class="coverage-list">
-            <li class="coverage-item">
-              <div class="coverage-item__label">Coverage A: Dwelling</div>
-              <div class="coverage-item__value">$551,000</div>
-            </li>
 
-            <li class="coverage-item coverage-item--alt">
-              <div class="coverage-item__label">Coverage B: Other Structures</div>
-              <div class="coverage-item__value">$51,000</div>
-            </li>
+        <div class="card mt-4">
+          <div class="card__header">
+            <h2 class="card__title">Property Coverages</h2>
+          </div>
+          <div class="card__body">
+            <dl class="kv">
+              <div>
+                <dt>Coverage A: Dwelling</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Coverage B: Other Structures</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Coverage C: Personal Property</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Coverage D: Loss of Use</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Coverage E: Personal Liability</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Coverage F: Medical Payments to Others</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+              <div>
+                <dt>Deductible: Other Covered Perils</dt>
+                <dd>{{ Amount }}</dd>
+              </div>
+            </dl>
+            <button class="btn btn--link mt-4"><i class="fa-regular fa-sharp fa-pencil"></i> Request Changes</button>
+          </div>
+        </div>
 
-            <li class="coverage-item">
-              <div class="coverage-item__label">Coverage C: Personal Property</div>
-              <div class="coverage-item__value">$385,700</div>
-            </li>
-
-            <li class="coverage-item coverage-item--alt">
-              <div class="coverage-item__label">Coverage D: Loss of Use</div>
-              <div class="coverage-item__value">$165,300</div>
-            </li>
-
-            <li class="coverage-item">
-              <div class="coverage-item__label">Coverage E: Personal Liability</div>
-              <div class="coverage-item__value">$500,000</div>
-            </li>
-
-            <li class="coverage-item coverage-item--alt">
-              <div class="coverage-item__label">Coverage F: Medical Payments to Others</div>
-              <div class="coverage-item__value">$5,000</div>
-            </li>
-
-            <li class="coverage-item">
-              <div class="coverage-item__label">Deductible: Other Covered Perils</div>
-              <div class="coverage-item__value">$1,000</div>
-            </li>
-          </ul>
-        </section>
-
-        <!-- Policy Documents -->
-        <h2 class="section-heading">Policy Documents</h2>
-        <section class="documents">
-          <!-- Empty state placeholder; wire to real list later -->
-          <p class="documents__empty">No documents available.</p>
-        </section>
+        <div class="card mt-4">
+          <div class="card__header">
+            <h2 class="card__title">Policy Documents</h2>
+          </div>
+          <div class="card__body">
+            <ul>
+              <li>
+                <a href="#"><i class="fa-regular fa-sharp fa-file-lines"></i> {{ Document Name }}</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-regular fa-sharp fa-file-lines"></i> {{ Document Name }}</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa-regular fa-sharp fa-file-lines"></i> {{ Document Name }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </main>
     </div>
     <script type="module" src="/js/main.js"></script>

@@ -47,7 +47,7 @@ small,
   display: grid;
   grid-template-columns: 1fr 1fr; /* two columns */
   align-items: start;
-  row-gap: 0.5rem;
+  row-gap: 1rem;
   column-gap: 1rem;
   margin: 0;
   font-size: 0.875rem;
