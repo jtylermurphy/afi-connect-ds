@@ -55,3 +55,15 @@ body[data-layout="page"] {
     align-self: start;
   }
 }
+
+/* Layouts for content inside main area */
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 767px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -233,16 +233,43 @@
             </div>
 
             <!-- RIGHT COLUMN -->
-            <aside class="card details__section actions-panel" aria-labelledby="actions-title">
-              <div class="actions">
-                <!-- Disable / demote when autopay & zero balance -->
-                <a class="btn btn--primary" href="#" aria-disabled="true">Make Payment</a>
-                <a class="btn btn--link mt-3" href="#"
-                  ><i class="fa-sharp fa-regular fa-file-lines"></i>View Statements</a
-                >
+            <aside class="" aria-labelledby="actions-title">
+              <div class="card details__section actions-panel">
+                <div class="actions">
+                  <!-- Disable / demote when autopay & zero balance -->
+                  <a class="btn btn--primary" href="#" aria-disabled="true">Make Payment</a>
+                  <p class="disclaimer">Any payment made after 6pm CST will be credited the next business day.</p>
+                </div>
               </div>
-
-              <p class="disclaimer">Any payment made after 6pm CST will be credited the next business day.</p>
+              <div class="card details__section statements-panel">
+                <div class="card__header"><h2 class="card__title">Statements</h2></div>
+                <div class="card__body">
+                  <ul class="statements">
+                    <li>
+                      <a href="#" class="statement__link">
+                        <i class="fa-regular fa-sharp fa-file-pdf"></i>
+                        <span class="statement__date"> 7/28/2025</span
+                        ><span class="statement__title">Electronic Funds Transfer Notice</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="statement__link">
+                        <i class="fa-regular fa-sharp fa-file-pdf"></i>
+                        <span class="statement__date"> 5/28/2025</span
+                        ><span class="statement__title">Electronic Funds Transfer Notice</span></a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="statement__link">
+                        <i class="fa-regular fa-sharp fa-file-pdf"></i>
+                        <span class="statement__date"> 3/28/2025</span
+                        ><span class="statement__title">Electronic Funds Transfer Notice</span></a
+                      >
+                    </li>
+                  </ul>
+                  <!-- Add more statements as needed -->
+                </div>
+              </div>
             </aside>
           </div>
         </section>

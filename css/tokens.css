@@ -29,6 +29,10 @@
 
   --site-header-icon-color: var(--afids-color-grey-500);
 
+  --afids-color-bg-default: var(--color-white);
+  --afids-color-bg-subtle: var(--color-neutral-100);
+  --afids-color-border: var(--color-neutral-200);
+
   --site-header-icon-hover-color: var(--afids-color-brand-dark-blue-500);
   /* Spacing */
 

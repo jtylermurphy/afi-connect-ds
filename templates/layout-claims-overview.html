@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="two-column-layout">
+          <div class="content">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Open Claims</h2>
+              </div>
+              <div class="card__body"><p>You currently have no open claims.</p></div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card__header">
+                <h2 class="card__title">Open Claims</h2>
+              </div>
+              <div class="card__body">
+                <ul class="payor__policies">
+                  <li>
+                    <a href="/templates/layout-policy-view.html" class="policy-card policy-card--active">
+                      <div class="policy-card__content">
+                        <div class="policy-card__meta">
+                          <span class="policy-card__type">{{Claim Type}}</span>
+                          <span class="policy-card__number">{{Claim number}}</span>
+                        </div>
+
+                        <div class="policy-card__term">{{Date of Loss}}</div>
+                      </div>
+                      <div class="policy-card__chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/templates/layout-policy-view.html" class="policy-card policy-card--active">
+                      <div class="policy-card__content">
+                        <div class="policy-card__meta">
+                          <span class="policy-card__type">{{Claim Type}}</span>
+                          <span class="policy-card__number">{{Claim number}}</span>
+                        </div>
+
+                        <div class="policy-card__term">{{Date of Loss}}</div>
+                      </div>
+                      <div class="policy-card__chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card__header">
+                <h2 class="card__title">Claims History</h2>
+              </div>
+              <div class="card__body">
+                <p>No claims in the last 5 years.</p>
+              </div>
+            </div>
+          </div>
+          <div class="aside">
+            <div class="card">
+              <div class="card__body">
+                <button class="btn btn--primary">Submit a Claim</button>
+                <p class="mt-4">
+                  If we can assist you with a claim, please call <a href="tel:+18002550187">800-255-0187</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
