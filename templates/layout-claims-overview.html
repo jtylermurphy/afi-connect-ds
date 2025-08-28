@@ -21,41 +21,59 @@
           <div class="content">
             <div class="card">
               <div class="card__header">
-                <h2 class="card__title">Open Claims</h2>
+                <h2 class="card__title"><i class="fa-regular fa-sharp fa-folder-open"></i> Open Claims</h2>
               </div>
               <div class="card__body"><p>You currently have no open claims.</p></div>
             </div>
 
-            <div class="card mt-4">
+            <div class="card mt-4 card--claims-open">
               <div class="card__header">
-                <h2 class="card__title">Open Claims</h2>
+                <h2 class="card__title"><i class="fa-regular fa-sharp fa-folder-open"></i> Open Claims</h2>
               </div>
-              <div class="card__body">
-                <ul class="payor__policies">
-                  <li>
-                    <a href="/templates/layout-policy-view.html" class="policy-card policy-card--active">
-                      <div class="policy-card__content">
-                        <div class="policy-card__meta">
-                          <span class="policy-card__type">{{Claim Type}}</span>
-                          <span class="policy-card__number">{{Claim number}}</span>
-                        </div>
 
-                        <div class="policy-card__term">{{Date of Loss}}</div>
+              <div class="card__body">
+                <ul class="claims__list">
+                  <li>
+                    <a
+                      href="/templates/layout-claims-detail.html"
+                      class="list-card claim-card"
+                      aria-label="Auto claim number 23-4817, date of loss Aug 20, 2025">
+                      <div class="list-card__content">
+                        <div class="list-card__meta">
+                          <span class="list-card__type">{{Claim Type}}</span>
+                          <span class="list-card__number">{{Claim number}}</span>
+                        </div>
+                        <div class="list-card__term">
+                          Date of Loss:
+                          <time datetime="2025-08-20">{{Date of Loss}}</time>
+                        </div>
                       </div>
-                      <div class="policy-card__chevron"><i class="fa-solid fa-chevron-right"></i></div>
+
+                      <div class="list-card__chevron" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
                     </a>
                   </li>
-                  <li>
-                    <a href="/templates/layout-policy-view.html" class="policy-card policy-card--active">
-                      <div class="policy-card__content">
-                        <div class="policy-card__meta">
-                          <span class="policy-card__type">{{Claim Type}}</span>
-                          <span class="policy-card__number">{{Claim number}}</span>
-                        </div>
 
-                        <div class="policy-card__term">{{Date of Loss}}</div>
+                  <li>
+                    <a
+                      href="/templates/layout-claims-detail.html"
+                      class="list-card claim-card"
+                      aria-label="Property claim number 23-4790, date of loss Aug 14, 2025">
+                      <div class="list-card__content">
+                        <div class="list-card__meta">
+                          <span class="list-card__type">{{Claim Type}}</span>
+                          <span class="list-card__number">{{Claim number}}</span>
+                        </div>
+                        <div class="list-card__term">
+                          Date of Loss:
+                          <time datetime="2025-08-14">{{Date of Loss}}</time>
+                        </div>
                       </div>
-                      <div class="policy-card__chevron"><i class="fa-solid fa-chevron-right"></i></div>
+
+                      <div class="list-card__chevron" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
                     </a>
                   </li>
                 </ul>
@@ -64,10 +82,61 @@
 
             <div class="card mt-4">
               <div class="card__header">
-                <h2 class="card__title">Claims History</h2>
+                <h2 class="card__title"><i class="fa-regular fa-sharp fa-archive"></i> Claims History</h2>
               </div>
               <div class="card__body">
                 <p>No claims in the last 5 years.</p>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card__header">
+                <h2 class="card__title"><i class="fa-regular fa-sharp fa-archive"></i> Claims History</h2>
+              </div>
+              <div class="card__body">
+                <ul class="claims__list claims__list--history">
+                  <li>
+                    <a
+                      href="/templates/layout-claims-detail.html"
+                      class="list-card claim-card"
+                      aria-label="Property claim number 24-2198, date of loss Nov 2, 2024">
+                      <div class="list-card__content">
+                        <div class="list-card__meta">
+                          <span class="list-card__type">Property</span>
+                          <span class="list-card__number">Claim #24-2198</span>
+                        </div>
+                        <div class="list-card__term">
+                          Date of Loss:
+                          <time datetime="2024-11-02">Nov 2, 2024</time>
+                        </div>
+                      </div>
+                      <div class="list-card__chevron" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="/templates/layout-claims-detail.html"
+                      class="list-card claim-card"
+                      aria-label="Auto claim number 23-1120, date of loss Apr 10, 2023">
+                      <div class="list-card__content">
+                        <div class="list-card__meta">
+                          <span class="list-card__type">Auto</span>
+                          <span class="list-card__number">Claim #23-1120</span>
+                        </div>
+                        <div class="list-card__term">
+                          Date of Loss:
+                          <time datetime="2023-04-10">Apr 10, 2023</time>
+                        </div>
+                      </div>
+                      <div class="list-card__chevron" aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

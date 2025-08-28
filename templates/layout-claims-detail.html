@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims Detail View</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <p class="back-link"><a href="#" aria-label="Back to Claims Overview">← Back</a></p>
+            <h1 class="page-header__title">Claim {{ Claim # }}</h1>
+          </div>
+        </header>
+        <div class="two-column-layout">
+          <div class="content">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Claim Details</h2>
+              </div>
+              <div class="card__body">
+                <p><strong>Claim Type:</strong> {{ Claim Type }}</p>
+                <p>
+                  <strong>Claim Status:</strong> <span class="tag tag--success">Open</span>
+                  <span class="tag">Closed</span> <span class="tag tag--success">Re-opened</span>
+                </p>
+                <p><strong>Date of Loss:</strong> {{ Date MM/DD/YYYY}}</p>
+                <p><strong>Cause of Loss:</strong> {{ Cause of Loss }}</p>
+                <p><strong>Amount Paid:</strong> {{ $#,###.## }}</p>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card__header"><h2 class="card__title">Claim Documents</h2></div>
+              <div class="card__body">
+                <p>No documents have been uploaded for this claim.</p>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card__header"><h2 class="card__title">Claim Documents</h2></div>
+              <div class="card__body">
+                <div class="action-list">
+                  <div class="action-list-item" role="button" tabindex="0">
+                    <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+                    <span class="action-list-item__label">Item with Icon</span>
+                    <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="action-list-item" role="button" tabindex="0">
+                    <i class="action-list-item__icon fa-solid fa-file-lines" aria-hidden="true"></i>
+                    <span class="action-list-item__label">Item with Icon</span>
+                    <i class="action-list-item__chevron fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aside">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title">Your Claim Rep</h2>
+              </div>
+              <div class="card__body">
+                <p><strong>{{ Adjuster Name }}</strong></p>
+                <p>
+                  <a href="tel:+1{{Adjuster Phone #}}" class="btn btn--link"
+                    ><i class="fa-regular fa-sharp fa-phone"></i> Call Your Rep</a
+                  >
+                </p>
+                <p>
+                  <a href="mailto:{{Adjuster Email}}" class="btn btn--link"
+                    ><i class="fa-regular fa-sharp fa-envelope"></i> Send a Message</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
