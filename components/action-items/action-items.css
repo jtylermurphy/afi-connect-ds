@@ -1,0 +1,193 @@
+/* ========== Base (neutral) ========== */
+.action-items__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  color: #111;
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.action-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary-50);
+}
+
+.action-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+  border-radius: 9999px;
+  background-color: #c0c4cc;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.action-item__label {
+  flex: 1;
+}
+.action-item__chevron {
+  margin-left: 0.75rem;
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
+.action-item:focus-visible {
+  outline: 2px solid var(--focus-outline, #005fcc);
+  position: relative;
+  z-index: 1;
+  background-color: #f0f8ff;
+}
+
+/* ========== FORCED MODES (win everywhere) ========== */
+/* Force CARDS (no mobile borders/dividers/pill sizes are large) */
+.action-items--cards .action-items__grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  border: 0; /* <-- prevents mobile border bleed */
+  border-radius: 0; /* neutral */
+  overflow: visible; /* neutral */
+}
+
+.action-items--cards .action-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.action-items--cards .action-item + .action-item {
+  border-top: 0;
+}
+.action-items--cards .action-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.action-items--cards .action-item__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  border-radius: 9999px;
+  background-color: #c0c4cc;
+  color: #fff;
+}
+
+/* Force LIST (stack + borders/dividers + small icon, at any width) */
+.action-items--list .action-items__grid {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.action-items--list .action-item {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.75rem 1rem;
+}
+
+.action-items--list .action-item + .action-item {
+  border-top: 1px solid #e0e0e0;
+}
+.action-items--list .action-item:hover {
+  background-color: #f9f9f9;
+  box-shadow: none;
+}
+
+.action-items--list .action-item__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 1rem;
+  background: none;
+  color: #555;
+  border-radius: 0;
+}
+
+/* ========== RESPONSIVE DEFAULTS (only when NOT forced) ========== */
+/* Desktop default = CARDS */
+@media (min-width: 641px) {
+  .action-items:not(.action-items--list) .action-items__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    border: 0; /* <-- ensure no container border on desktop cards */
+    border-radius: 0;
+    overflow: visible;
+  }
+
+  .action-items:not(.action-items--list) .action-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+  }
+
+  .action-items:not(.action-items--list) .action-item + .action-item {
+    border-top: 0;
+  }
+
+  .action-items:not(.action-items--list) .action-item__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    border-radius: 9999px;
+    background-color: #c0c4cc;
+    color: #fff;
+  }
+}
+
+/* Mobile default = LIST */
+@media (max-width: 640px) {
+  .action-items:not(.action-items--cards) .action-items__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid #e0e0e0; /* <-- only when NOT forced cards */
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .action-items:not(.action-items--cards) .action-item {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0.75rem 1rem;
+  }
+
+  .action-items:not(.action-items--cards) .action-item + .action-item {
+    border-top: 1px solid #e0e0e0;
+  }
+  .action-items:not(.action-items--cards) .action-item:hover {
+    /* background-color: #f9f9f9;
+    box-shadow: none; */
+  }
+
+  .action-items:not(.action-items--cards) .action-item__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    font-size: 1rem;
+    background: none;
+    color: #555;
+    border-radius: 0;
+  }
+}

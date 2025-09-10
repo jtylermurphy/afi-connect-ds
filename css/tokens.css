@@ -53,6 +53,10 @@
   --afids-radius-full: 100%;
   --afids-radius-pill: 15rem;
 
+  /* Border Colors */
+  --afids-color-border: var(--color-neutral-200);
+  --afids-border-color-default: var(--afids-color-border);
+
   /* Widths */
   --container-width: 1140px;
   --sidebar-width: 200px;
