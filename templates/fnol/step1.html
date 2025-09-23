@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <p class="back-link">
+              <a href="/templates/layout-claims-overview.html" aria-label="Back to Claims Overview">← Back</a>
+            </p>
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="one-column-layout">
+          <div class="card">
+            <div class="card__body">
+              <ol class="progress-stepper" aria-label="Steps">
+                <li class="progress-stepper__item is-current">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Claim Type</span>
+                </li>
+                <li class="progress-stepper__item" aria-current="step">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Fraud Warning</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Contact Info</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Loss Details</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Review</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Confirmation</span>
+                </li>
+              </ol>
+
+              <h2 class="form-h2">Select the type and coverage and state</h2>
+              <form action="">
+                <div class="form-group">
+                  <label for="state" class="form-label"
+                    ><span class="required-asterisk">*</span> Select the coverage for which you would like to file a
+                    claim
+                  </label>
+                  <select
+                    class="form-control form-control--select"
+                    id="coverage-type"
+                    name="coverage-type"
+                    aria-describedby="coverage-type-help"
+                    required>
+                    <option value="" hidden>Choose one</option>
+                    <option value="Home">Home</option>
+                    <option>Renter</option>
+                    <option value="VIP">VIP</option>
+                    <option>...</option>
+                    <!-- …truncate for brevity… -->
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="state" class="form-label">What state is your policy issued?</label>
+                  <select
+                    class="form-control form-control--select"
+                    id="state"
+                    name="state"
+                    aria-describedby="state-help"
+                    required>
+                    <option value="" hidden>Choose one</option>
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>Arizona</option>
+                    <option>Arkansas</option>
+                    <option>California</option>
+                    <!-- …truncate for brevity… -->
+                  </select>
+                </div>
+
+                <div class="form-group" id="extra-field" hidden>
+                  <label class="form-label mr-3"
+                    ><span class="required-asterisk">*</span> Is this a liability claim?</label
+                  >
+                  <label class="form-check mr-4">
+                    <input type="radio" class="form-check-input" name="plan" value="basic" checked />
+                    <span class="form-check-label">Yes</span>
+                  </label>
+
+                  <label class="form-check">
+                    <input type="radio" class="form-check-input" name="plan" value="pro" />
+                    <span class="form-check-label">No</span>
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="card__footer">
+              <a href="step2.html" class="btn btn--primary">Continue</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const coverageSelect = document.getElementById("coverage-type");
+        const extraField = document.getElementById("extra-field"); // wrap your conditional field in this
+
+        const triggerValues = ["Home", "VIP"]; // adjust as needed
+
+        coverageSelect.addEventListener("change", () => {
+          const value = coverageSelect.value;
+          if (triggerValues.includes(value)) {
+            extraField.hidden = false;
+          } else {
+            extraField.hidden = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

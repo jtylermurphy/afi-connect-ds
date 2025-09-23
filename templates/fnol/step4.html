@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="one-column-layout">
+          <div class="card">
+            <div class="card__body">
+              <ol class="progress-stepper" aria-label="Steps">
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Claim Type</span>
+                </li>
+                <li class="progress-stepper__item is-complete" aria-current="step">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Fraud Warning</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Contact Info</span>
+                </li>
+                <li class="progress-stepper__item is-current">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Loss Details</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Review</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Confirmation</span>
+                </li>
+              </ol>
+
+              <h2 class="form-h2">Enter the information below.</h2>
+              <form action="" class="form--inline-all">
+                <section aria-labelledby="loss-all-title">
+                  <!-- 1) COMMON: Where did the loss take place? -->
+                  <div class="form-group form-group--choices">
+                    <p class="form-label"><span class="required-asterisk">*</span> Where did the loss take place?</p>
+                    <div>
+                      <label class="form-check">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="loss-location"
+                          id="loss-location-on"
+                          value="on" />
+                        <span class="form-check-label">On policy residence</span>
+                      </label>
+                      <label class="form-check">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          name="loss-location"
+                          id="loss-location-off"
+                          value="off" />
+                        <span class="form-check-label">Off policy residence</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 2) ON-PREMISES group (first chunk, appears immediately after radios) -->
+                  <section id="on-premises">
+                    <div class="form-group">
+                      <label for="property-occupancy" class="form-label">
+                        <span class="required-asterisk">*</span> Property occupancy
+                      </label>
+                      <select
+                        id="property-occupancy"
+                        name="property-occupancy"
+                        class="form-control form-control--select">
+                        <option value="" hidden>Choose One</option>
+                        <option>Occupied</option>
+                        <option>Vacant</option>
+                        <option>Seasonal</option>
+                        <option>Under Construction</option>
+                      </select>
+                    </div>
+                  </section>
+
+                  <!-- 3) OFF-PREMISES group (first chunk, appears immediately after radios) -->
+                  <section id="off-premises">
+                    <div class="form-group">
+                      <label for="off-street-address" class="form-label">Street address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="off-street-address"
+                        name="off-street-address"
+                        placeholder="1234 Main St" />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="off-city" class="form-label"> <span class="required-asterisk">*</span> City </label>
+                      <input type="text" class="form-control" id="off-city" name="off-city" placeholder="Anytown" />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="off-state" class="form-label"> <span class="required-asterisk">*</span> State </label>
+                      <input type="text" class="form-control" id="off-state" name="off-state" placeholder="CA" />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="off-location-desc" class="form-label">Brief description of location</label>
+                      <textarea
+                        class="form-control"
+                        id="off-location-desc"
+                        name="off-location-desc"
+                        rows="3"></textarea>
+                    </div>
+                  </section>
+
+                  <!-- 4) COMMON: Date / Time / Cause -->
+                  <div class="form-group">
+                    <label for="date-of-loss" class="form-label">
+                      <span class="required-asterisk">*</span> Date of loss
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="date-of-loss"
+                      name="date-of-loss"
+                      placeholder="mm/dd/yyyy" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="time-of-loss" class="form-label">Time of loss</label>
+                    <select id="time-of-loss" name="time-of-loss" class="form-control form-control--select">
+                      <option value="" hidden>Choose Time</option>
+                      <option>12:00 AM</option>
+                      <option>1:00 AM</option>
+                      <option>2:00 AM</option>
+                      <option>3:00 AM</option>
+                      <option>4:00 AM</option>
+                      <option>5:00 AM</option>
+                      <option>6:00 AM</option>
+                      <option>7:00 AM</option>
+                      <option>8:00 AM</option>
+                      <option>9:00 AM</option>
+                      <option>10:00 AM</option>
+                      <option>11:00 AM</option>
+                      <option>12:00 PM</option>
+                      <option>1:00 PM</option>
+                      <option>2:00 PM</option>
+                      <option>3:00 PM</option>
+                      <option>4:00 PM</option>
+                      <option>5:00 PM</option>
+                      <option>6:00 PM</option>
+                      <option>7:00 PM</option>
+                      <option>8:00 PM</option>
+                      <option>9:00 PM</option>
+                      <option>10:00 PM</option>
+                      <option>11:00 PM</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cause-type" class="form-label">
+                      <span class="required-asterisk">*</span> Cause/Type of loss
+                    </label>
+                    <select id="cause-type" name="cause-type" class="form-control form-control--select">
+                      <option value="" hidden>Choose One</option>
+                      <option>Fire</option>
+                      <option>Hail</option>
+                      <option>Water</option>
+                      <option>Wind</option>
+                      <option>Theft</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+
+                  <!-- 5) ON-PREMISES group (second chunk, comes after cause/time/date) -->
+                  <section aria-labelledby="report-group-title" id="on-premises-report">
+                    <div class="form-group form-group--choices">
+                      <p class="form-label" id="report-group-title">Was a police/fire report filed?</p>
+                      <div>
+                        <label class="form-check">
+                          <input type="radio" class="form-check-input" name="report-filed" value="yes" />
+                          <span class="form-check-label">Yes</span>
+                        </label>
+                        <label class="form-check">
+                          <input type="radio" class="form-check-input" name="report-filed" value="no" />
+                          <span class="form-check-label">No</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="dept-name" class="form-label">Police/Fire department name</label>
+                      <input type="text" class="form-control" id="dept-name" name="dept-name" />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="report-number" class="form-label">Police/Fire report number</label>
+                      <input type="text" class="form-control" id="report-number" name="report-number" />
+                    </div>
+                  </section>
+
+                  <!-- 6) OFF-PREMISES group (second chunk, comes after cause/time/date) -->
+                  <section id="off-premises-roof">
+                    <div class="form-group">
+                      <label for="roof-type" class="form-label">
+                        <span class="required-asterisk">*</span> Roof type/material
+                      </label>
+                      <select id="roof-type" name="roof-type" class="form-control form-control--select">
+                        <option value="" hidden>Choose One</option>
+                        <option>Asphalt Shingle</option>
+                        <option>Metal</option>
+                        <option>Tile</option>
+                        <option>Wood Shake</option>
+                        <option>Flat/Modified Bitumen</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="roof-age" class="form-label">
+                        <span class="required-asterisk">*</span> Age of roof
+                      </label>
+                      <select id="roof-age" name="roof-age" class="form-control form-control--select">
+                        <option value="" hidden>Choose One</option>
+                        <option>0–5 years</option>
+                        <option>6–10 years</option>
+                        <option>11–15 years</option>
+                        <option>16–20 years</option>
+                        <option>20+ years</option>
+                        <option>Unknown</option>
+                      </select>
+                    </div>
+                  </section>
+
+                  <!-- 7) COMMON: Always last -->
+                  <div class="form-group">
+                    <label for="damage-desc" class="form-label">
+                      <span class="required-asterisk">*</span> Describe the damage
+                    </label>
+                    <textarea id="damage-desc" name="damage-desc" class="form-control" rows="4"></textarea>
+                  </div>
+                </section>
+              </form>
+            </div>
+            <div class="card__footer">
+              <a href="step5.html" class="btn btn--primary">Continue</a>
+              <a href="step3.html" class="btn btn--link ml-4">Back</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const onPremA = document.getElementById("on-premises");
+        const onPremB = document.getElementById("on-premises-report");
+        const offPremA = document.getElementById("off-premises");
+        const offPremB = document.getElementById("off-premises-roof");
+
+        const radios = document.querySelectorAll("input[name='loss-location']");
+
+        // Remember which fields were required so we can restore later
+        [onPremA, onPremB, offPremA, offPremB].forEach((sec) => {
+          sec?.querySelectorAll("[required]").forEach((el) => (el.dataset.wasRequired = "1"));
+        });
+
+        function toggleSection(sec, show) {
+          if (!sec) return;
+          sec.hidden = !show;
+          sec.querySelectorAll("input, select, textarea, button").forEach((el) => {
+            el.disabled = !show;
+            if (show) {
+              if (el.dataset.wasRequired === "1") el.required = true;
+            } else {
+              el.required = false;
+            }
+          });
+        }
+
+        function update() {
+          const checked = document.querySelector("input[name='loss-location']:checked");
+          const isOn = checked && checked.value === "on";
+          const isOff = checked && checked.value === "off";
+
+          toggleSection(onPremA, isOn);
+          toggleSection(onPremB, isOn);
+          toggleSection(offPremA, isOff);
+          toggleSection(offPremB, isOff);
+        }
+
+        radios.forEach((r) => r.addEventListener("change", update));
+        update(); // initialize on load
+      });
+    </script>
+  </body>
+</html>

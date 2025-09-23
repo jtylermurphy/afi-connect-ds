@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="one-column-layout">
+          <div class="card">
+            <div class="card__body">
+              <ol class="progress-stepper" aria-label="Steps">
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Claim Type</span>
+                </li>
+                <li class="progress-stepper__item is-complete" aria-current="step">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Fraud Warning</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Contact Info</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Loss Details</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Review</span>
+                </li>
+                <li class="progress-stepper__item is-current">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Confirmation</span>
+                </li>
+              </ol>
+
+              <h2 class="form-h2">Your claim has been submitted</h2>
+              <p class="mt-4">
+                Thank you for submitting your notice of claim. If you would like to contact us please call
+                <a href="tel:+18002550187">800-255-0187</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

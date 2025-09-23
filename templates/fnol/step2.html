@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="one-column-layout">
+          <div class="card">
+            <div class="card__body">
+              <ol class="progress-stepper" aria-label="Steps">
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Claim Type</span>
+                </li>
+                <li class="progress-stepper__item is-current" aria-current="step">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Fraud Warning</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Contact Info</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Loss Details</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Review</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Confirmation</span>
+                </li>
+              </ol>
+
+              <h2 class="form-h2">Please read and acknowledge the fraud warning below.</h2>
+              <form action="">
+                <p>
+                  Any person who knowingly and willfully presents a false or fraudulent claim for payment of loss or
+                  benefit or who knowingly and willfully presents false information in an application for insurance is
+                  guilty of a crime and may be subject to fines and confinement in prison.
+                </p>
+
+                <div class="form-group">
+                  <label class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fraud-warning" id="fraud-warning" required />
+                    <span class="form-check-label"
+                      ><span class="required-asterisk">*</span> I have read and agree to the above fraud warning.</span
+                    >
+                  </label>
+                </div>
+
+                <h2 class="form-h2">Please read and acknowledge the claims loss history warning below.</h2>
+                <p>
+                  The submission of this claim will become a permanent part of your claim loss history. If you are
+                  unsure about filling this claim please contact AFI at <a href="tel:+1800255-0187">800-255-0187</a>.
+                </p>
+                <div class="form-group">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      name="loss-history-warning"
+                      id="loss-history-warning"
+                      required />
+                    <span class="form-check-label"
+                      ><span class="required-asterisk">*</span> I have read and agree to the above claim loss history
+                      warning.</span
+                    >
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="card__footer">
+              <a href="step3.html" class="btn btn--primary">Continue</a>
+              <a href="step1.html" class="btn btn--link ml-4">Back</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

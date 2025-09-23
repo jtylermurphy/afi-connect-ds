@@ -1,0 +1,294 @@
+/* PatternFly-ish Stepper
+   - Horizontal (default) + Vertical (.is-vertical)
+   - Compact density (.is-compact) + auto-compact via container query
+   - FA icons centered; numbers show by default if no icon
+   - Segmented connectors: gray by default, green for completed segments
+   - Labels visually hidden on small containers (accessible)
+*/
+
+/* ---------- tokens ---------- */
+:root {
+  --ps-size: 1.25rem; /* marker ~20px */
+  --ps-ring: 1px; /* marker stroke */
+  --ps-gap-i: 0.5rem; /* marker → label gap */
+  --ps-connector: 1px; /* connector thickness */
+  --ps-label: 0.875rem; /* label font-size */
+  --ps-number: 0.75rem; /* number size inside marker */
+
+  /* colors (PF-ish) */
+  --ps-neutral: #d2d2d2;
+  --ps-text: #151515;
+  --ps-muted: #8a8d90;
+  --ps-blue: #06c; /* current */
+  --ps-green: #3e8635; /* complete */
+  --ps-amber: #f0ab00; /* warning */
+  --ps-red: #c9190b; /* error */
+
+  --ps-bg: #fff;
+}
+
+/* ---------- accessibility utility ---------- */
+/* Visually hides an element but keeps it available to screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* ---------- base ---------- */
+.progress-stepper {
+  container-type: inline-size; /* enables container queries */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* horizontal by default */
+  justify-content: space-between;
+  align-items: flex-start;
+  color: var(--ps-text);
+  counter-reset: step;
+  gap: 0; /* continuity via connectors */
+}
+
+.progress-stepper__item {
+  counter-increment: step;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+}
+
+/* ---------- connectors (HORIZONTAL ONLY) ---------- */
+.progress-stepper:not(.is-vertical) .progress-stepper__item::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--ps-size) / 2);
+  left: 50%;
+  right: -50%; /* halfway to next center */
+  height: var(--ps-connector);
+  background: var(--ps-neutral);
+  z-index: 0;
+  transform: translateY(-0.5px); /* crisp line on all DPIs */
+}
+.progress-stepper:not(.is-vertical) .progress-stepper__item:last-child::after {
+  display: none;
+}
+.progress-stepper:not(.is-vertical) .progress-stepper__item.is-complete::after {
+  background: var(--ps-blue);
+}
+
+/* ---------- marker (circle) ---------- */
+.progress-stepper__marker {
+  width: var(--ps-size);
+  height: var(--ps-size);
+  border-radius: 50%;
+  border: var(--ps-ring) solid var(--ps-neutral);
+  background: var(--ps-bg);
+  display: flex; /* perfect centering */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /* above connectors */
+  line-height: 1;
+}
+
+/* Step NUMBER by default */
+.progress-stepper__marker::after {
+  content: counter(step);
+  display: block;
+  font-size: var(--ps-number);
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+/* FA icons (hidden by default so numbers show) */
+.progress-stepper__marker i {
+  display: none;
+  font-size: calc(var(--ps-size) * 0.6); /* ~60% of circle */
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* ---------- states ---------- */
+/* CURRENT: blue ring + NUMBER */
+.progress-stepper__item.is-current .progress-stepper__marker {
+  border-color: var(--ps-blue);
+  background-color: var(--ps-blue);
+}
+
+.progress-stepper__item.is-current .progress-stepper__marker::after {
+  color: #fff;
+}
+.progress-stepper__item.is-current .progress-stepper__label {
+  font-weight: 600;
+}
+
+/* COMPLETE: solid green + white check icon; number hidden */
+.progress-stepper__item.is-complete .progress-stepper__marker {
+  background: var(--ps-green);
+  border-color: var(--ps-green);
+}
+.progress-stepper__item.is-complete .progress-stepper__marker::after {
+  content: "";
+}
+.progress-stepper__item.is-complete .progress-stepper__marker i {
+  display: block;
+  color: #fff;
+}
+
+/* WARNING: solid amber + exclamation icon; number hidden */
+.progress-stepper__item.is-warning .progress-stepper__marker {
+  background: var(--ps-amber);
+  border-color: var(--ps-amber);
+}
+.progress-stepper__item.is-warning .progress-stepper__marker::after {
+  content: "";
+}
+.progress-stepper__item.is-warning .progress-stepper__marker i {
+  display: block;
+  color: #1b1b1b;
+}
+
+/* ERROR: solid red + times icon; number hidden */
+.progress-stepper__item.is-error .progress-stepper__marker {
+  background: var(--ps-red);
+  border-color: var(--ps-red);
+}
+.progress-stepper__item.is-error .progress-stepper__marker::after {
+  content: "";
+}
+.progress-stepper__item.is-error .progress-stepper__marker i {
+  display: block;
+  color: #fff;
+}
+
+/* Optional disabled */
+.progress-stepper__item.is-disabled {
+  opacity: 0.6;
+}
+
+/* Label */
+.progress-stepper__label {
+  margin-top: var(--ps-gap-i);
+  font-size: var(--ps-label);
+  color: var(--ps-text);
+  font-weight: 400;
+}
+
+/* ---------- VERTICAL ORIENTATION ---------- */
+.progress-stepper.is-vertical {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+}
+
+.progress-stepper.is-vertical .progress-stepper__item {
+  flex: unset;
+  display: grid;
+  grid-template-columns: var(--ps-size) 1fr;
+  column-gap: var(--ps-gap-i);
+  align-items: flex-start;
+  text-align: left;
+  position: relative;
+  padding-bottom: 1.25rem; /* room for connector below */
+}
+
+/* vertical connector: from marker bottom down toward next */
+.progress-stepper.is-vertical .progress-stepper__item::after {
+  content: "";
+  position: absolute;
+  top: var(--ps-size); /* start at bottom of marker */
+  left: calc(var(--ps-size) / 2 - var(--ps-ring) / 2);
+  width: var(--ps-connector);
+  height: calc(100% - var(--ps-size));
+  background: var(--ps-neutral);
+  z-index: 0;
+  transform: translateX(-0.5px); /* crisp 1px line */
+}
+.progress-stepper.is-vertical .progress-stepper__item:last-child::after {
+  display: none;
+}
+.progress-stepper.is-vertical .progress-stepper__item.is-complete::after {
+  background: var(--ps-green);
+}
+
+/* label in vertical sits to the right of the marker */
+.progress-stepper.is-vertical .progress-stepper__label {
+  margin-top: 0;
+  overflow-wrap: anywhere; /* graceful wrapping */
+}
+
+/* ---------- compact density (class-based) ---------- */
+.progress-stepper.is-compact {
+  --ps-size: 1rem; /* ~16px */
+  --ps-ring: 1px;
+  --ps-connector: 1px;
+  --ps-gap-i: 0.375rem;
+  --ps-label: 0.8125rem;
+  --ps-number: 0.6875rem;
+}
+
+/* ---------- auto-compact via container query ---------- */
+@container (max-width: 420px) {
+  .progress-stepper {
+    --ps-size: 1rem;
+    --ps-ring: 1px;
+    --ps-connector: 1px;
+    --ps-gap-i: 0.375rem;
+    --ps-label: 0.8125rem;
+    --ps-number: 0.6875rem;
+  }
+}
+
+/* ---------- visually hide labels on small containers ---------- */
+@container (max-width: 600px) {
+  .progress-stepper .progress-stepper__label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+/* ---------- media query fallback (if container queries unsupported) ---------- */
+@media (max-width: 360px) {
+  .progress-stepper .progress-stepper__label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+}
+
+/* Only hide labels when .is-labels-hidden is applied */
+.progress-stepper.is-labels-hidden .progress-stepper__label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

@@ -1,0 +1,249 @@
+/* ------------------------------------------------------------------
+       AFI Connect Design System – text input (Option C naming)
+       - Tokens use the --afids- prefix (AFI Design System)
+       - Wrapper: .form-group
+       - Control: .form-control
+       - Label: .form-label
+       - Hint: .form-text
+       - Messages: .invalid-feedback, .valid-feedback
+       ------------------------------------------------------------------ */
+
+:root {
+  --afids-color-bg: #ffffff;
+  --afids-color-surface: #ffffff;
+  --afids-color-border: #d2d6dc;
+  --afids-color-border-strong: #9aa4b2;
+  --afids-color-text: #111827;
+  --afids-color-text-muted: #4b5563;
+  --afids-color-focus: #2563eb;
+  --afids-color-danger: #b91c1c;
+  --afids-color-danger-bg: #fef2f2;
+  --afids-color-success: #047857;
+  --afids-color-success-bg: #ecfdf5;
+
+  --afids-radius: 0.5rem;
+  --afids-radius-sm: 0.375rem;
+  --afids-space-1: 0.25rem;
+  --afids-space-2: 0.5rem;
+  --afids-space-3: 0.75rem;
+  --afids-space-4: 1rem;
+  --afids-space-5: 1.25rem;
+  --afids-space-6: 1.5rem;
+
+  --afids-control-height: 2.25rem;
+  --afids-control-padding-x: 0.75rem;
+  --afids-control-gap: 0.5rem;
+  --afids-control-border: 1px;
+  --afids-control-ring: 2px;
+  --afids-font-size: 1rem;
+  --afids-label-size: 0.875rem;
+  --afids-hint-size: 0.8125rem;
+}
+
+.form-group {
+  margin-block: var(--afids-space-5);
+}
+.form-label {
+  font-size: var(--afids-label-size);
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--afids-space-2);
+}
+.form-text {
+  color: var(--afids-color-text-muted);
+  font-size: var(--afids-hint-size);
+  margin-top: var(--afids-space-1);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: var(--afids-control-height);
+  padding: 0 var(--afids-control-padding-x);
+  border: var(--afids-control-border) solid var(--afids-color-border);
+  border-radius: var(--afids-radius);
+  background: var(--afids-color-surface);
+  color: var(--afids-color-text);
+  font-size: var(--afids-font-size);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+textarea.form-control {
+  min-height: calc(var(--afids-control-height) * 3);
+  padding-top: var(--afids-space-2);
+  padding-bottom: var(--afids-space-2);
+  line-height: 1.5;
+  resize: vertical;
+}
+.form-control::placeholder {
+  color: #9aa4b2;
+}
+.form-control:hover {
+  border-color: var(--afids-color-border-strong);
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--afids-color-focus);
+  box-shadow: 0 0 0 var(--afids-control-ring) color-mix(in srgb, var(--afids-color-focus) 25%, transparent);
+}
+.form-control:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+.form-control[readonly] {
+  background: #f9fafb;
+}
+
+.invalid-feedback,
+.valid-feedback {
+  margin-top: var(--afids-space-2);
+  font-size: var(--afids-hint-size);
+  padding: var(--afids-space-1) var(--afids-space-2);
+  border-radius: var(--afids-radius-sm);
+}
+.invalid-feedback {
+  color: var(--afids-color-danger);
+  background: var(--afids-color-danger-bg);
+}
+.valid-feedback {
+  color: var(--afids-color-success);
+  background: var(--afids-color-success-bg);
+}
+
+.form-group.is-invalid .form-control {
+  border-color: var(--afids-color-danger);
+  box-shadow: 0 0 0 var(--afids-control-ring) color-mix(in srgb, var(--afids-color-danger) 20%, transparent);
+}
+.form-group.is-valid .form-control {
+  border-color: var(--afids-color-success);
+  box-shadow: 0 0 0 var(--afids-control-ring) color-mix(in srgb, var(--afids-color-success) 20%, transparent);
+}
+.is-compact {
+  /* density knob (optional, future use) */
+}
+
+/* Select affordance */
+.form-control--select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="%236B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+}
+
+/* Checkboxes & radios */
+.form-check {
+  display: inline-flex;
+  gap: var(--afids-space-2);
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+  margin-block: var(--afids-space-2);
+}
+.form-check-input {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  accent-color: var(--afids-color-focus);
+}
+.form-check.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.form-check-label {
+  font-size: var(--afids-font-size);
+}
+
+.form-h2 {
+  color: var(--afids-color-brand-dark-blue-500);
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.form-h3 {
+  color: var(--afids-color-brand-dark-red-500);
+}
+
+@media (min-width: 768px) {
+  .form--inline-all .form-group {
+    display: grid;
+    grid-template-columns: var(--fg-label-w, 25ch) minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.375rem;
+    align-items: start;
+  }
+
+  .form--inline-all .form-group > :first-child {
+    grid-column: 1;
+  }
+
+  .form--inline-all .form-group > :not(:first-child) {
+    grid-column: 2;
+  }
+
+  .form--inline-all .form-group > .form-label {
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .form--inline-all .form-group > input,
+  .form--inline-all .form-group > select,
+  .form--inline-all .form-group > textarea {
+    width: 100%;
+  }
+
+  .form--inline-all .form-group > label.form-check {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    margin-inline-end: 1rem;
+    width: auto !important;
+  }
+
+  .form--inline-all .form-group > label.form-check + label.form-check {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Your global inline grid rules can stay as-is:
+     first child = column 1, everything else = column 2 */
+
+  /* Radios now live inside a wrapper <div> → lay them out inline + wrapping */
+  .form--inline-all .form-group--choices > div {
+    grid-column: 2; /* ensure options live under the controls column */
+    display: flex; /* inline chips */
+    flex-wrap: wrap; /* wrap if needed */
+    gap: 0.5rem 1rem; /* (row gap, column gap) between choices */
+  }
+
+  /* Remove any old left-margin utility that over-pushes choices in grid */
+  .form--inline-all .form-group--choices > div > .ml-4 {
+    margin-left: 0;
+  }
+
+  /* Normalize each option */
+  .form--inline-all .form-group--choices > div > .form-check {
+    margin: 0; /* your base adds margin-block; flatten in grid */
+  }
+
+  /* Labels (questions) should wrap in the label column */
+  .form--inline-all .form-group--choices > .form-label {
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+.required-asterisk {
+  color: var(--afids-color-danger);
+}
+
+.review-form .form-group {
+  margin-block: var(--afids-space-2);
+}
+#warning p {
+  color: var(--afids-color-danger);
+}

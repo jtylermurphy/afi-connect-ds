@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-active="claims" data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Claims</h1>
+          </div>
+        </header>
+        <div class="one-column-layout">
+          <div class="card">
+            <div class="card__body">
+              <ol class="progress-stepper" aria-label="Steps">
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Claim Type</span>
+                </li>
+                <li class="progress-stepper__item is-complete" aria-current="step">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Fraud Warning</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Contact Info</span>
+                </li>
+                <li class="progress-stepper__item is-complete">
+                  <span class="progress-stepper__marker">
+                    <i class="fa-solid fa-sharp fa-check"></i>
+                  </span>
+                  <span class="progress-stepper__label">Loss Details</span>
+                </li>
+                <li class="progress-stepper__item is-current">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Review</span>
+                </li>
+                <li class="progress-stepper__item">
+                  <span class="progress-stepper__marker">
+                    <!-- no icon: will show the number -->
+                  </span>
+                  <span class="progress-stepper__label">Confirmation</span>
+                </li>
+              </ol>
+
+              <section id="warning" class="mt-4">
+                <p>
+                  <strong>
+                    This claim has not been submitted to AFI yet. Please verify the information below and click the
+                    Submit button for the claim to be sent to an AFI claims adjuster.
+                  </strong>
+                </p>
+                <p>
+                  <strong>
+                    To make changes to this claim use the back button at the bottom of the page to return to the page(s)
+                    needing correction.
+                  </strong>
+                </p>
+              </section>
+
+              <form action="" class="form--inline-all review-form" novalidate>
+                <section id="review" aria-labelledby="review-title">
+                  <h2 id="review-title" class="form-h2">Review &amp; Confirm</h2>
+
+                  <!-- Claim Type Section -->
+                  <h3 class="form-h3">Claim Type Section</h3>
+                  <div class="form-group">
+                    <label class="form-label">Coverage type selected:</label>
+                    <p>Homeowner</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">State selected:</label>
+                    <p>KS</p>
+                  </div>
+
+                  <!-- Review Fraud Section -->
+                  <h3 class="form-h3">Review Fraud Section</h3>
+                  <div class="form-group">
+                    <label class="form-label">Have you read and agree to the above fraud warning?</label>
+                    <p>Yes</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Have you read and agree to the claim loss history warning?</label>
+                    <p>Yes</p>
+                  </div>
+
+                  <!-- Contact Info -->
+                  <h3 class="form-h3">Contact Info</h3>
+                  <div class="form-group">
+                    <label class="form-label">Policyholder Name:</label>
+                    <p>PRESSMAR, WILLIAM</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy Number:</label>
+                    <p>HO000491462</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy Address:</label>
+                    <p>386 PINEVALLEY LN</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy City:</label>
+                    <p>SANFORD</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy State:</label>
+                    <p>NC</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy Zip Code:</label>
+                    <p>27332</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy Phone Number:</label>
+                    <p>(727) 612-8129</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Policy Email:</label>
+                    <p>bpressmar98@yahoo.com</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Is the contact person for this claim the policyholder?</label>
+                    <p>Yes</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Use policy address?</label>
+                    <p>Yes</p>
+                  </div>
+
+                  <!-- Loss Detail Section -->
+                  <h3 class="form-h3">Loss Detail Section</h3>
+                  <div class="form-group">
+                    <label class="form-label">Where did the loss take place?</label>
+                    <p>On Residence</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Property occupancy:</label>
+                    <p>Occupied</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Date of loss:</label>
+                    <p>09/02/2025</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Time of loss:</label>
+                    <p>5:00 AM</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Loss type:</label>
+                    <p>Fire</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Was a police/fire report filed?</label>
+                    <p>Yes</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Police/Fire department name:</label>
+                    <p>Fire Department</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Police/Fire report number:</label>
+                    <p>123456</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Give a brief description of damage:</label>
+                    <p>Fire reported in home</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Estimated amount of entire loss:</label>
+                    <p>$50000</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Do you have a signed contract with a contractor?</label>
+                    <p>Yes</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">What is the amount of the contract?</label>
+                    <p>$50000</p>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Are emergency/temporary repairs needed?</label>
+                    <p>Yes</p>
+                  </div>
+                </section>
+              </form>
+            </div>
+            <div class="card__footer">
+              <a href="step6.html" class="btn btn--primary">Submit</a>
+              <a href="step4.html" class="btn btn--link ml-4">Back</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

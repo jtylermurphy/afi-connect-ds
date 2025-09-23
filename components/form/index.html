@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AFI Connect – Form Inputs (v1)</title>
+
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>AFI Connect – Text Input</h1>
+
+    <!-- Default text input -->
+    <div class="form-group">
+      <label for="firstName" class="form-label">First name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="e.g., Jordan" required />
+      <div class="form-text" id="firstName-help">As shown on your ID</div>
+    </div>
+
+    <!-- Invalid example -->
+    <div class="form-group is-invalid">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        value="tyler@"
+        aria-invalid="true"
+        aria-describedby="email-error" />
+      <div class="form-text">We’ll send confirmations here</div>
+      <div class="invalid-feedback" id="email-error" role="alert">Enter a valid email address.</div>
+    </div>
+
+    <!-- Valid example -->
+    <div class="form-group is-valid">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        value="tmurphy"
+        aria-describedby="username-success" />
+      <div class="valid-feedback" id="username-success">Nice—this username is available.</div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label for="notes" class="form-label">Notes</label>
+      <textarea
+        class="form-control"
+        id="notes"
+        name="notes"
+        rows="4"
+        aria-describedby="notes-help"
+        placeholder="Tell us anything helpful…"></textarea>
+      <div class="form-text" id="notes-help">Add any additional details</div>
+    </div>
+
+    <!-- Select -->
+    <div class="form-group">
+      <label for="state" class="form-label">State</label>
+      <select class="form-control form-control--select" id="state" name="state" aria-describedby="state-help" required>
+        <option value="" hidden>Select a state…</option>
+        <option>Alabama</option>
+        <option>Alaska</option>
+        <option>Arizona</option>
+        <option>Arkansas</option>
+        <option>California</option>
+        <!-- …truncate for brevity… -->
+      </select>
+      <div class="form-text" id="state-help">US only</div>
+    </div>
+
+    <!-- Checkbox group -->
+    <fieldset class="form-group" aria-describedby="prefs-help">
+      <legend class="form-label">Preferences</legend>
+      <div class="form-text" id="prefs-help">Toggle any that apply</div>
+
+      <label class="form-check">
+        <input type="checkbox" class="form-check-input" name="updates" id="updates" />
+        <span class="form-check-label">Email me product updates</span>
+      </label>
+
+      <label class="form-check is-disabled">
+        <input type="checkbox" class="form-check-input" name="sms" id="sms" disabled />
+        <span class="form-check-label">Text me alerts</span>
+        <div class="form-text">Disabled until a mobile number is on file.</div>
+      </label>
+    </fieldset>
+
+    <!-- Radio group -->
+    <fieldset class="form-group" aria-describedby="plan-help">
+      <legend class="form-label">Plan</legend>
+      <div class="form-text" id="plan-help">Choose one</div>
+
+      <label class="form-check">
+        <input type="radio" class="form-check-input" name="plan" value="basic" checked />
+        <span class="form-check-label">Basic</span>
+      </label>
+
+      <label class="form-check">
+        <input type="radio" class="form-check-input" name="plan" value="pro" />
+        <span class="form-check-label">Pro</span>
+      </label>
+
+      <label class="form-check is-disabled">
+        <input type="radio" class="form-check-input" name="plan" value="enterprise" disabled />
+        <span class="form-check-label">Enterprise</span>
+        <div class="form-text">Contact sales to enable.</div>
+      </label>
+    </fieldset>
+  </body>
+</html>

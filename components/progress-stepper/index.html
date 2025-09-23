@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Stepper</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="
+        max-width: 90%;
+        margin: 1rem auto;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      ">
+      <h4>Horizontal Stepper</h4>
+      <ol class="progress-stepper" aria-label="Steps">
+        <li class="progress-stepper__item is-complete">
+          <span class="progress-stepper__marker">
+            <i class="fa-solid fa-sharp fa-check"></i>
+          </span>
+          <span class="progress-stepper__label">First step</span>
+        </li>
+        <li class="progress-stepper__item is-current" aria-current="step">
+          <span class="progress-stepper__marker">
+            <!-- no icon: will show the number -->
+          </span>
+          <span class="progress-stepper__label">Second step</span>
+        </li>
+        <li class="progress-stepper__item">
+          <span class="progress-stepper__marker">
+            <!-- no icon: will show the number -->
+          </span>
+          <span class="progress-stepper__label">Third step</span>
+        </li>
+      </ol>
+    </div>
+    <div
+      class="container"
+      style="
+        max-width: 90%;
+        margin: 1rem auto;
+        padding: 1rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      ">
+      <h4>Vertical Stepper</h4>
+      <ol class="progress-stepper is-vertical" aria-label="Steps">
+        <li class="progress-stepper__item is-complete">
+          <span class="progress-stepper__marker">
+            <i class="fas fa-check"></i>
+          </span>
+          <span class="progress-stepper__label">First step</span>
+        </li>
+        <li class="progress-stepper__item is-warning">
+          <span class="progress-stepper__marker">
+            <i class="fas fa-exclamation"></i>
+          </span>
+          <span class="progress-stepper__label">Second step</span>
+        </li>
+        <li class="progress-stepper__item">
+          <span class="progress-stepper__marker">
+            <!-- no icon: will show the number -->
+          </span>
+          <span class="progress-stepper__label">Third step</span>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
