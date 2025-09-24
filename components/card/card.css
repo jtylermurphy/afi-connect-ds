@@ -36,7 +36,3 @@
 
   padding-top: 1rem;
 }
-
-#warning p {
-  color: var(--afids-color-error);
-}

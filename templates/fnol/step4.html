@@ -60,211 +60,333 @@
               </ol>
 
               <h2 class="form-h2">Enter the information below.</h2>
-              <form action="" class="form--inline-all">
-                <section aria-labelledby="loss-all-title">
-                  <!-- 1) COMMON: Where did the loss take place? -->
+              <form action="" class="form--inline-all" id="loss-form">
+                <!-- 1) Where did the loss take place? -->
+                <div class="form-group form-group--choices">
+                  <p class="form-label"><span class="required-asterisk">*</span> Where did the loss take place?</p>
+                  <div>
+                    <label class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input"
+                        name="loss-location"
+                        id="loss-location-on"
+                        value="on" />
+                      <span class="form-check-label">On policy residence</span>
+                    </label>
+                    <label class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input"
+                        name="loss-location"
+                        id="loss-location-off"
+                        value="off" />
+                      <span class="form-check-label">Off policy residence</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 2) On-policy (shows when "on") -->
+                <section id="on-premises" hidden>
+                  <div class="form-group">
+                    <label for="property-occupancy" class="form-label">
+                      <span class="required-asterisk">*</span> Property occupancy
+                    </label>
+                    <select
+                      id="property-occupancy"
+                      name="property-occupancy"
+                      class="form-control form-control--select"
+                      data-req="1">
+                      <option value="" disabled selected>Choose One</option>
+                      <option value="occupied">Occupied</option>
+                      <option value="unoccupied">Unoccupied</option>
+                      <option value="vacant">Vacant</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" id="vacancy-date-group" hidden>
+                    <label for="vacancy-date" class="form-label">
+                      <span class="required-asterisk">*</span> Date of vacancy/unoccupancy
+                    </label>
+                    <input type="date" class="form-control" id="vacancy-date" name="vacancy-date" data-req="1" />
+                  </div>
+                </section>
+
+                <!-- 3) Off-policy (shows when "off") -->
+                <section id="off-premises" hidden>
+                  <div class="form-group">
+                    <label for="off-street-address" class="form-label">Street address</label>
+                    <input type="text" class="form-control" id="off-street-address" name="off-street-address" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="off-city" class="form-label"><span class="required-asterisk">*</span> City</label>
+                    <input type="text" class="form-control" id="off-city" name="off-city" data-req="1" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="off-state" class="form-label"><span class="required-asterisk">*</span> State</label>
+                    <input type="text" class="form-control" id="off-state" name="off-state" data-req="1" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="off-location-desc" class="form-label">Brief description of location</label>
+                    <textarea class="form-control" id="off-location-desc" name="off-location-desc" rows="3"></textarea>
+                  </div>
+                </section>
+
+                <!-- 4) Date / Time / Cause -->
+                <div class="form-group">
+                  <label for="date-of-loss" class="form-label">
+                    <span class="required-asterisk">*</span> Date of loss
+                  </label>
+                  <input type="date" class="form-control" id="date-of-loss" name="date-of-loss" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="time-of-loss" class="form-label">Time of loss</label>
+                  <select id="time-of-loss" name="time-of-loss" class="form-control form-control--select"></select>
+                </div>
+
+                <div class="form-group">
+                  <label for="cause-type" class="form-label">
+                    <span class="required-asterisk">*</span> Cause/Type of loss
+                  </label>
+                  <select id="cause-type" name="cause-type" class="form-control form-control--select" required>
+                    <option value="" disabled selected>Choose One</option>
+                    <option value="earthquake">Earthquake</option>
+                    <option value="fire">Fire</option>
+                    <option value="flood">Flood</option>
+                    <option value="foundation">Foundation</option>
+                    <option value="frozen_pipes">Frozen Pipes</option>
+                    <option value="hail">Hail</option>
+                    <option value="hurricane">Hurricane</option>
+                    <option value="lightning">Lightning</option>
+                    <option value="mold">Mold</option>
+                    <option value="smoke_puffback">Smoke/Puff Back</option>
+                    <option value="theft_burglary">Theft/Burglary</option>
+                    <option value="rain_water">Water damage from rain water</option>
+                    <option value="water_plumbing">Water Damage from Plumbing</option>
+                    <option value="windstorm">Windstorm</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- 5) Cause-specific: Fire/Theft → police report -->
+                <section id="cause-police" hidden>
                   <div class="form-group form-group--choices">
-                    <p class="form-label"><span class="required-asterisk">*</span> Where did the loss take place?</p>
+                    <p class="form-label"><span class="required-asterisk">*</span> Was a police/fire report filed?</p>
                     <div>
                       <label class="form-check">
-                        <input
-                          type="radio"
-                          class="form-check-input"
-                          name="loss-location"
-                          id="loss-location-on"
-                          value="on" />
-                        <span class="form-check-label">On policy residence</span>
+                        <input type="radio" class="form-check-input" name="report-filed" value="yes" />
+                        <span class="form-check-label">Yes</span>
                       </label>
                       <label class="form-check">
-                        <input
-                          type="radio"
-                          class="form-check-input"
-                          name="loss-location"
-                          id="loss-location-off"
-                          value="off" />
-                        <span class="form-check-label">Off policy residence</span>
+                        <input type="radio" class="form-check-input" name="report-filed" value="no" />
+                        <span class="form-check-label">No</span>
                       </label>
                     </div>
                   </div>
 
-                  <!-- 2) ON-PREMISES group (first chunk, appears immediately after radios) -->
-                  <section id="on-premises">
+                  <div id="report-details" hidden>
                     <div class="form-group">
-                      <label for="property-occupancy" class="form-label">
-                        <span class="required-asterisk">*</span> Property occupancy
+                      <label for="dept-name" class="form-label"
+                        ><span class="required-asterisk">*</span> Police/Fire department name</label
+                      >
+                      <input type="text" class="form-control" id="dept-name" name="dept-name" data-req="1" />
+                    </div>
+                    <div class="form-group">
+                      <label for="report-number" class="form-label" style="margin-top: 0.5rem">
+                        <span class="required-asterisk">*</span> Police/Fire report number
                       </label>
-                      <select
-                        id="property-occupancy"
-                        name="property-occupancy"
-                        class="form-control form-control--select">
-                        <option value="" hidden>Choose One</option>
-                        <option>Occupied</option>
-                        <option>Vacant</option>
-                        <option>Seasonal</option>
-                        <option>Under Construction</option>
-                      </select>
+                      <input type="text" class="form-control" id="report-number" name="report-number" data-req="1" />
                     </div>
-                  </section>
+                  </div>
+                </section>
 
-                  <!-- 3) OFF-PREMISES group (first chunk, appears immediately after radios) -->
-                  <section id="off-premises">
-                    <div class="form-group">
-                      <label for="off-street-address" class="form-label">Street address</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="off-street-address"
-                        name="off-street-address"
-                        placeholder="1234 Main St" />
+                <!-- 6) Cause-specific: Frozen Pipes -->
+                <section id="frozen-pipes-group" hidden>
+                  <div class="form-group form-group--choices">
+                    <p class="form-label"><span class="required-asterisk">*</span> Was the heat maintained?</p>
+                    <div>
+                      <label class="form-check">
+                        <input type="radio" class="form-check-input" name="heat-maintained" value="yes" />
+                        <span class="form-check-label">Yes</span>
+                      </label>
+                      <label class="form-check">
+                        <input type="radio" class="form-check-input" name="heat-maintained" value="no" />
+                        <span class="form-check-label">No</span>
+                      </label>
                     </div>
+                  </div>
 
-                    <div class="form-group">
-                      <label for="off-city" class="form-label"> <span class="required-asterisk">*</span> City </label>
-                      <input type="text" class="form-control" id="off-city" name="off-city" placeholder="Anytown" />
+                  <div class="form-group form-group--choices">
+                    <p class="form-label">
+                      <span class="required-asterisk">*</span> Was the water shut off &amp; plumbing lines drained?
+                    </p>
+                    <div>
+                      <label class="form-check">
+                        <input type="radio" class="form-check-input" name="water-shutoff-drained" value="yes" />
+                        <span class="form-check-label">Yes</span>
+                      </label>
+                      <label class="form-check">
+                        <input type="radio" class="form-check-input" name="water-shutoff-drained" value="no" />
+                        <span class="form-check-label">No</span>
+                      </label>
                     </div>
+                  </div>
+                </section>
 
-                    <div class="form-group">
-                      <label for="off-state" class="form-label"> <span class="required-asterisk">*</span> State </label>
-                      <input type="text" class="form-control" id="off-state" name="off-state" placeholder="CA" />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="off-location-desc" class="form-label">Brief description of location</label>
-                      <textarea
-                        class="form-control"
-                        id="off-location-desc"
-                        name="off-location-desc"
-                        rows="3"></textarea>
-                    </div>
-                  </section>
-
-                  <!-- 4) COMMON: Date / Time / Cause -->
+                <!-- 7) Cause-specific: Hail/Hurricane/Windstorm -->
+                <section id="storm-roof" hidden>
                   <div class="form-group">
-                    <label for="date-of-loss" class="form-label">
-                      <span class="required-asterisk">*</span> Date of loss
-                    </label>
+                    <label for="roof-type" class="form-label"
+                      ><span class="required-asterisk">*</span> Roof type/material</label
+                    >
+                    <select id="roof-type" name="roof-type" class="form-control form-control--select" data-req="1">
+                      <option value="" disabled selected>Choose One</option>
+                      <option value="composite">Composite</option>
+                      <option value="flat">Flat</option>
+                      <option value="metal">Metal</option>
+                      <option value="tile">Tile</option>
+                      <option value="wood">Wood</option>
+                      <option value="unknown">Unknown</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="roof-age" class="form-label"
+                      ><span class="required-asterisk">*</span> Age of roof</label
+                    >
+                    <select id="roof-age" name="roof-age" class="form-control form-control--select" data-req="1">
+                      <option value="" disabled selected>Choose One</option>
+                      <option value="1-5 years old">1-5 years old</option>
+                      <option value="6-10 years old">6-10 years old</option>
+                      <option value="11-15 years old">11-15 years old</option>
+                      <option value="over 15 years old">over 15 years old</option>
+                    </select>
+                  </div>
+                </section>
+
+                <!-- 8) Cause-specific: Smoke / Puff Back -->
+                <section id="smoke-cause-group" hidden>
+                  <div class="form-group">
+                    <label for="smoke-cause" class="form-label"
+                      ><span class="required-asterisk">*</span> What caused the smoke?</label
+                    >
+                    <select id="smoke-cause" name="smoke-cause" class="form-control form-control--select" data-req="1">
+                      <option value="" disabled selected>Choose One</option>
+                      <option value="Exterior Fire">Exterior Fire</option>
+                      <option value="Interior Fire">Interior Fire</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </section>
+
+                <!-- 9) Cause-specific: Water Damage from Plumbing -->
+                <section id="plumbing-cause-group" hidden>
+                  <div class="form-group">
+                    <label for="plumbing-water-cause" class="form-label"
+                      ><span class="required-asterisk">*</span> What caused the water damage?</label
+                    >
+                    <select
+                      id="plumbing-water-cause"
+                      name="plumbing-water-cause"
+                      class="form-control form-control--select"
+                      data-req="1">
+                      <option value="" disabled selected>Choose One</option>
+                      <option value="plumbing">Plumbing</option>
+                      <option value="natural">Natural</option>
+                      <option value="unknown">Unknown</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </section>
+
+                <!-- 10) Cause-specific: Other -->
+                <section id="other-cause-group" hidden>
+                  <div class="form-group">
+                    <label for="other-cause-desc" class="form-label"
+                      ><span class="required-asterisk">*</span> Give a description of the cause of loss</label
+                    >
                     <input
                       type="text"
                       class="form-control"
-                      id="date-of-loss"
-                      name="date-of-loss"
-                      placeholder="mm/dd/yyyy" />
-                  </div>
-
-                  <div class="form-group">
-                    <label for="time-of-loss" class="form-label">Time of loss</label>
-                    <select id="time-of-loss" name="time-of-loss" class="form-control form-control--select">
-                      <option value="" hidden>Choose Time</option>
-                      <option>12:00 AM</option>
-                      <option>1:00 AM</option>
-                      <option>2:00 AM</option>
-                      <option>3:00 AM</option>
-                      <option>4:00 AM</option>
-                      <option>5:00 AM</option>
-                      <option>6:00 AM</option>
-                      <option>7:00 AM</option>
-                      <option>8:00 AM</option>
-                      <option>9:00 AM</option>
-                      <option>10:00 AM</option>
-                      <option>11:00 AM</option>
-                      <option>12:00 PM</option>
-                      <option>1:00 PM</option>
-                      <option>2:00 PM</option>
-                      <option>3:00 PM</option>
-                      <option>4:00 PM</option>
-                      <option>5:00 PM</option>
-                      <option>6:00 PM</option>
-                      <option>7:00 PM</option>
-                      <option>8:00 PM</option>
-                      <option>9:00 PM</option>
-                      <option>10:00 PM</option>
-                      <option>11:00 PM</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="cause-type" class="form-label">
-                      <span class="required-asterisk">*</span> Cause/Type of loss
-                    </label>
-                    <select id="cause-type" name="cause-type" class="form-control form-control--select">
-                      <option value="" hidden>Choose One</option>
-                      <option>Fire</option>
-                      <option>Hail</option>
-                      <option>Water</option>
-                      <option>Wind</option>
-                      <option>Theft</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-
-                  <!-- 5) ON-PREMISES group (second chunk, comes after cause/time/date) -->
-                  <section aria-labelledby="report-group-title" id="on-premises-report">
-                    <div class="form-group form-group--choices">
-                      <p class="form-label" id="report-group-title">Was a police/fire report filed?</p>
-                      <div>
-                        <label class="form-check">
-                          <input type="radio" class="form-check-input" name="report-filed" value="yes" />
-                          <span class="form-check-label">Yes</span>
-                        </label>
-                        <label class="form-check">
-                          <input type="radio" class="form-check-input" name="report-filed" value="no" />
-                          <span class="form-check-label">No</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="dept-name" class="form-label">Police/Fire department name</label>
-                      <input type="text" class="form-control" id="dept-name" name="dept-name" />
-                    </div>
-
-                    <div class="form-group">
-                      <label for="report-number" class="form-label">Police/Fire report number</label>
-                      <input type="text" class="form-control" id="report-number" name="report-number" />
-                    </div>
-                  </section>
-
-                  <!-- 6) OFF-PREMISES group (second chunk, comes after cause/time/date) -->
-                  <section id="off-premises-roof">
-                    <div class="form-group">
-                      <label for="roof-type" class="form-label">
-                        <span class="required-asterisk">*</span> Roof type/material
-                      </label>
-                      <select id="roof-type" name="roof-type" class="form-control form-control--select">
-                        <option value="" hidden>Choose One</option>
-                        <option>Asphalt Shingle</option>
-                        <option>Metal</option>
-                        <option>Tile</option>
-                        <option>Wood Shake</option>
-                        <option>Flat/Modified Bitumen</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="roof-age" class="form-label">
-                        <span class="required-asterisk">*</span> Age of roof
-                      </label>
-                      <select id="roof-age" name="roof-age" class="form-control form-control--select">
-                        <option value="" hidden>Choose One</option>
-                        <option>0–5 years</option>
-                        <option>6–10 years</option>
-                        <option>11–15 years</option>
-                        <option>16–20 years</option>
-                        <option>20+ years</option>
-                        <option>Unknown</option>
-                      </select>
-                    </div>
-                  </section>
-
-                  <!-- 7) COMMON: Always last -->
-                  <div class="form-group">
-                    <label for="damage-desc" class="form-label">
-                      <span class="required-asterisk">*</span> Describe the damage
-                    </label>
-                    <textarea id="damage-desc" name="damage-desc" class="form-control" rows="4"></textarea>
+                      id="other-cause-desc"
+                      name="other-cause-desc"
+                      data-req="1" />
                   </div>
                 </section>
+
+                <!-- 11) Always after cause -->
+                <div class="form-group">
+                  <label for="damage-desc" class="form-label"
+                    ><span class="required-asterisk">*</span> Give a brief description the damage</label
+                  >
+                  <textarea id="damage-desc" name="damage-desc" class="form-control" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="loss-amount-estimate" class="form-label"
+                    ><span class="required-asterisk">*</span> Estimated amount of entire loss</label
+                  >
+                  <input
+                    id="loss-amount-estimate"
+                    name="loss-amount-estimate"
+                    class="form-control"
+                    type="text"
+                    inputmode="decimal"
+                    pattern="^[0-9]*([.][0-9]{1,2})?$"
+                    placeholder="Numbers only"
+                    required />
+                </div>
+
+                <div class="form-group form-group--choices">
+                  <p class="form-label">
+                    <span class="required-asterisk">*</span> Do you have a signed contract with a contractor?
+                  </p>
+                  <div>
+                    <label class="form-check">
+                      <input type="radio" class="form-check-input" name="contract-signed" value="yes" />
+                      <span class="form-check-label">Yes</span>
+                    </label>
+                    <label class="form-check">
+                      <input type="radio" class="form-check-input" name="contract-signed" value="no" />
+                      <span class="form-check-label">No</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group" id="contract-amount-group" hidden>
+                  <label for="contract-amount" class="form-label"
+                    ><span class="required-asterisk">*</span> What is the amount of the contract?</label
+                  >
+                  <input
+                    id="contract-amount"
+                    name="contract-amount"
+                    class="form-control"
+                    type="text"
+                    inputmode="decimal"
+                    pattern="^[0-9]*([.][0-9]{1,2})?$"
+                    placeholder="Numbers only"
+                    data-req="1" />
+                </div>
+
+                <div class="form-group form-group--choices">
+                  <p class="form-label">
+                    <span class="required-asterisk">*</span> Are emergency/temporary repairs needed?
+                  </p>
+                  <div>
+                    <label class="form-check">
+                      <input type="radio" class="form-check-input" name="repairs-needed" value="yes" />
+                      <span class="form-check-label">Yes</span>
+                    </label>
+                    <label class="form-check">
+                      <input type="radio" class="form-check-input" name="repairs-needed" value="no" />
+                      <span class="form-check-label">No</span>
+                    </label>
+                  </div>
+                </div>
               </form>
             </div>
             <div class="card__footer">
@@ -278,46 +400,161 @@
     <script type="module" src="/js/main.js"></script>
     <script src="/js/script.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const onPremA = document.getElementById("on-premises");
-        const onPremB = document.getElementById("on-premises-report");
-        const offPremA = document.getElementById("off-premises");
-        const offPremB = document.getElementById("off-premises-roof");
+      (function () {
+        const $ = (sel, ctx = document) => ctx.querySelector(sel);
+        const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-        const radios = document.querySelectorAll("input[name='loss-location']");
+        // ---- Time options (only if none exist) ----
+        (function fillTimes() {
+          const sel = $("#time-of-loss");
+          if (!sel || sel.options.length > 0) return;
 
-        // Remember which fields were required so we can restore later
-        [onPremA, onPremB, offPremA, offPremB].forEach((sec) => {
-          sec?.querySelectorAll("[required]").forEach((el) => (el.dataset.wasRequired = "1"));
-        });
+          const to12 = (h, m) => {
+            const am = h < 12;
+            const h12 = h % 12 === 0 ? 12 : h % 12;
+            const mm = m === 0 ? "00" : "30";
+            return `${h12}:${mm} ${am ? "AM" : "PM"}`;
+          };
 
-        function toggleSection(sec, show) {
-          if (!sec) return;
-          sec.hidden = !show;
-          sec.querySelectorAll("input, select, textarea, button").forEach((el) => {
-            el.disabled = !show;
-            if (show) {
-              if (el.dataset.wasRequired === "1") el.required = true;
-            } else {
-              el.required = false;
+          const optEmpty = document.createElement("option");
+          optEmpty.value = "";
+          optEmpty.hidden = true;
+          optEmpty.textContent = "Choose Time";
+          sel.appendChild(optEmpty);
+
+          for (let h = 0; h < 24; h++) {
+            for (let m of [0, 30]) {
+              const opt = document.createElement("option");
+              opt.value = `${String(h).padStart(2, "0")}:${m === 0 ? "00" : "30"}`;
+              opt.textContent = to12(h, m);
+              sel.appendChild(opt);
             }
+          }
+        })();
+
+        // --- Section handles ---
+        const onPrem = $("#on-premises");
+        const offPrem = $("#off-premises");
+        const vacGrp = $("#vacancy-date-group");
+
+        const causePolice = $("#cause-police");
+        const policeDetails = $("#report-details");
+
+        const frozenGrp = $("#frozen-pipes-group");
+        const stormRoof = $("#storm-roof");
+        const smokeGrp = $("#smoke-cause-group");
+        const plumbGrp = $("#plumbing-cause-group");
+        const otherGrp = $("#other-cause-group");
+
+        const contractGrp = $("#contract-amount-group");
+
+        // --- Utilities ---
+        function setAriaAndInert(node, show) {
+          if (!node) return;
+          node.hidden = !show;
+          node.setAttribute("aria-hidden", String(!show));
+          // inert support is good in modern browsers; add a tiny fallback
+          if ("inert" in node) {
+            node.inert = !show;
+          } else {
+            // fallback: prevent tab focus
+            if (!show) node.setAttribute("tabindex", "-1");
+            else node.removeAttribute("tabindex");
+          }
+        }
+
+        function clearControl(el) {
+          const tag = el.tagName;
+          if (el.type === "radio" || el.type === "checkbox") {
+            el.checked = false;
+            return;
+          }
+          if (tag === "INPUT" || tag === "TEXTAREA") {
+            // keep placeholders; clear value
+            el.value = "";
+            return;
+          }
+          if (tag === "SELECT") {
+            // reset to first option (your placeholder is at index 0)
+            el.selectedIndex = 0;
+          }
+        }
+
+        function setSection(sec, show) {
+          if (!sec) return;
+          setAriaAndInert(sec, show);
+
+          $$("input, select, textarea", sec).forEach((el) => {
+            // toggle required only when section visible + data-req="1"
+            el.required = !!(show && el.dataset.req === "1");
+            el.disabled = !show;
+
+            if (!show) clearControl(el);
           });
         }
 
-        function update() {
-          const checked = document.querySelector("input[name='loss-location']:checked");
-          const isOn = checked && checked.value === "on";
-          const isOff = checked && checked.value === "off";
+        // --- Update blocks ---
+        function updateResidence() {
+          const where = ($('input[name="loss-location"]:checked')?.value || "").trim().toLowerCase();
+          const isOn = where === "on";
+          const isOff = where === "off";
 
-          toggleSection(onPremA, isOn);
-          toggleSection(onPremB, isOn);
-          toggleSection(offPremA, isOff);
-          toggleSection(offPremB, isOff);
+          setSection(onPrem, isOn);
+          setSection(offPrem, isOff);
+
+          // Vacancy date inside on-premises only when unoccupied or vacant
+          const occ = ($("#property-occupancy")?.value || "").trim().toLowerCase();
+          setSection(vacGrp, isOn && (occ === "unoccupied" || occ === "vacant"));
         }
 
-        radios.forEach((r) => r.addEventListener("change", update));
-        update(); // initialize on load
-      });
+        function shouldShowPoliceBlock(cause) {
+          // Allow common synonyms
+          return ["fire", "theft_burglary", "theft"].includes(cause);
+        }
+
+        function updatePoliceDetails() {
+          // Only consider details if the police section is currently shown
+          if (!causePolice || causePolice.hidden) {
+            setSection(policeDetails, false);
+            return;
+          }
+          const yesRadio = $('#cause-police input[name="report-filed"][value="yes"]');
+          const show = !!(yesRadio && yesRadio.checked);
+          setSection(policeDetails, show);
+        }
+
+        function updateCause() {
+          const cause = ($("#cause-type")?.value || "").trim().toLowerCase();
+
+          setSection(causePolice, shouldShowPoliceBlock(cause));
+          setSection(frozenGrp, cause === "frozen_pipes");
+          setSection(stormRoof, ["hail", "hurricane", "windstorm", "wind"].includes(cause));
+          setSection(smokeGrp, ["smoke_puffback", "smoke"].includes(cause));
+          setSection(plumbGrp, ["water_plumbing", "water"].includes(cause));
+          setSection(otherGrp, cause === "other");
+
+          updatePoliceDetails();
+        }
+
+        function updateContract() {
+          const has = ($('input[name="contract-signed"]:checked')?.value || "").trim().toLowerCase() === "yes";
+          setSection(contractGrp, has);
+        }
+
+        // --- Events ---
+        document.addEventListener("change", (e) => {
+          const t = e.target;
+          if (t.name === "loss-location" || t.id === "property-occupancy") updateResidence();
+          if (t.id === "cause-type") updateCause();
+          if (t.name === "contract-signed") updateContract();
+          if (t.name === "report-filed") updatePoliceDetails();
+        });
+
+        // --- Init (order matters slightly) ---
+        updateResidence();
+        updateCause();
+        updateContract();
+      })();
     </script>
   </body>
 </html>
