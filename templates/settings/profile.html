@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="" data-include="nav"></include>
+
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Settings</h1>
+          </div>
+        </header>
+
+        <div class="three-column-layout">
+          <div class="card">
+            <div class="card__header">
+              <h2 class="card__title">Profile Settings</h2>
+            </div>
+
+            <div class="card__body">
+              <p class="settings__desc">Review your account info. You can edit phone numbers and email addresses.</p>
+
+              <!-- Read-only owner info -->
+              <h3>Account Owner</h3>
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <p>Jane Doe</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Mailing Address</label>
+                <p>
+                  123 Main St.<br />
+                  Anywhere, ST 66048
+                </p>
+              </div>
+
+              <hr />
+
+              <!-- Contact Methods -->
+              <h3>Contact Methods</h3>
+
+              <!-- ===== PHONE ===== -->
+              <h4>Phone</h4>
+              <!-- subtle saved message -->
+              <div id="phone-status" class="valid-feedback" role="status" aria-live="polite" style="display: none">
+                Saved.
+              </div>
+
+              <div id="phone-section" aria-live="polite">
+                <!-- List holder -->
+                <div id="phone-list"></div>
+
+                <!-- Empty state -->
+                <div id="phone-empty">
+                  <button class="btn btn btn--link" type="button" data-action="add-phone">+ Add phone</button>
+                </div>
+              </div>
+
+              <!-- Phone row template -->
+              <template id="tpl-phone-row">
+                <div data-kind="phone" data-id="">
+                  <p>
+                    <strong><span data-field="type-label">Mobile</span>:</strong>
+                    <span data-field="number">(555) 123-4567</span>
+                    &nbsp;
+                    <button class="btn btn--link" type="button" data-action="edit-phone">Edit</button>
+                    |
+                    <button class="btn btn--link" type="button" data-action="remove-phone">Remove</button>
+                  </p>
+                </div>
+              </template>
+
+              <!-- Phone form template -->
+              <template id="tpl-phone-form">
+                <form data-kind="phone-form" novalidate>
+                  <div class="form-group" data-fieldwrap="type">
+                    <label class="form-label">Type</label>
+                    <select class="form-control form-control--select" name="type" required>
+                      <option value="" hidden>Select type…</option>
+                      <option value="mobile">Mobile</option>
+                      <option value="home">Home</option>
+                      <option value="business">Business</option>
+                    </select>
+                    <div class="invalid-feedback" role="alert">Choose a phone type.</div>
+                  </div>
+
+                  <div class="form-group" data-fieldwrap="number">
+                    <label class="form-label">Phone number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      name="number"
+                      placeholder="(555) 123-4567"
+                      inputmode="numeric"
+                      autocomplete="tel" />
+                    <div class="form-text">US 10-digit numbers only</div>
+                    <div class="invalid-feedback" role="alert">Enter a valid phone number.</div>
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn--primary" type="submit" data-action="save-phone">Save</button>
+                    <button class="btn btn--link" type="button" data-action="cancel-phone">Cancel</button>
+                  </div>
+                </form>
+              </template>
+
+              <br />
+
+              <!-- ===== EMAIL ===== -->
+              <h4>Email</h4>
+              <!-- subtle saved message -->
+              <div id="email-status" class="valid-feedback" role="status" aria-live="polite" style="display: none">
+                Saved.
+              </div>
+
+              <div id="email-section" aria-live="polite">
+                <!-- List holder -->
+                <div id="email-list"></div>
+
+                <!-- Empty state -->
+                <div id="email-empty">
+                  <button class="btn btn btn--link" type="button" data-action="add-email">+ Add email</button>
+                </div>
+              </div>
+
+              <!-- Email row template -->
+              <template id="tpl-email-row">
+                <div data-kind="email" data-id="">
+                  <p>
+                    <span data-field="address">jane@example.com</span>
+                    &nbsp;
+                    <button class="btn btn--link" type="button" data-action="edit-email">Edit</button>
+                    |
+                    <button class="btn btn--link" type="button" data-action="remove-email">Remove</button>
+                  </p>
+                </div>
+              </template>
+
+              <!-- Email form template -->
+              <template id="tpl-email-form">
+                <form data-kind="email-form" novalidate>
+                  <div class="form-group" data-fieldwrap="address">
+                    <label class="form-label">Email address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="address"
+                      placeholder="name@example.com"
+                      inputmode="email"
+                      autocomplete="email" />
+                    <div class="form-text">We’ll send confirmations here</div>
+                    <div class="invalid-feedback" role="alert">Enter a valid email address.</div>
+                  </div>
+
+                  <div class="form-group">
+                    <button class="btn btn--primary" type="submit" data-action="save-email">Save</button>
+                    <button class="btn btn--link" type="button" data-action="cancel-email">Cancel</button>
+                  </div>
+                </form>
+              </template>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- your existing scripts -->
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+
+    <!-- prototype controller for this page -->
+    <script type="module" src="/js/settings-profile.js"></script>
+  </body>
+</html>

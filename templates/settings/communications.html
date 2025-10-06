@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="settings" data-include="nav"></include>
+
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Communication Preferences</h1>
+            <p class="page-header__subtitle">Manage how we contact you about Policy, Billing, Claims, and Marketing.</p>
+          </div>
+        </header>
+
+        <form id="commPrefsForm" novalidate>
+          <!-- Contact (display only per Jira) -->
+          <section class="card">
+            <div class="card__header">
+              <h2 class="card__title">Push Notifications</h2>
+            </div>
+            <div class="card__body">
+              <div class="form-group">
+                <label class="form-label" for="memberEmail">Member Email</label>
+                <input
+                  id="memberEmail"
+                  name="memberEmail"
+                  class="form-control"
+                  type="email"
+                  value="amanda@example.com"
+                  readonly />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="memberMobile">Member Mobile #</label>
+                <input
+                  id="memberMobile"
+                  name="memberMobile"
+                  class="form-control"
+                  type="tel"
+                  value="(555) 867-5309"
+                  readonly />
+              </div>
+
+              <!-- Notification matrix: Policy / Billing / Claims / Marketing -->
+              <fieldset class="form-group">
+                <legend class="form-label">Notifications</legend>
+
+                <!-- Policy -->
+                <div class="form-group form-group--choices">
+                  <label class="form-label">Policy</label>
+                  <div class="form-check">
+                    <input type="radio" id="policy_both" name="policy" value="both" />
+                    <label for="policy_both">Both (Email &amp; SMS Text)</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="policy_email" name="policy" value="email" />
+                    <label for="policy_email">Email only</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="policy_sms" name="policy" value="sms" />
+                    <label for="policy_sms">SMS Text only</label>
+                  </div>
+                </div>
+
+                <!-- Billing -->
+                <div class="form-group form-group--choices">
+                  <label class="form-label">Billing</label>
+                  <div class="form-check">
+                    <input type="radio" id="billing_both" name="billing" value="both" />
+                    <label for="billing_both">Both (Email &amp; SMS Text)</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="billing_email" name="billing" value="email" />
+                    <label for="billing_email">Email only</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="billing_sms" name="billing" value="sms" />
+                    <label for="billing_sms">SMS Text only</label>
+                  </div>
+                </div>
+
+                <!-- Claims -->
+                <div class="form-group form-group--choices">
+                  <label class="form-label">Claims</label>
+                  <div class="form-check">
+                    <input type="radio" id="claims_both" name="claims" value="both" />
+                    <label for="claims_both">Both (Email &amp; SMS Text)</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="claims_email" name="claims" value="email" />
+                    <label for="claims_email">Email only</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="claims_sms" name="claims" value="sms" />
+                    <label for="claims_sms">SMS Text only</label>
+                  </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="form-group form-group--choices">
+                  <label class="form-label">Marketing</label>
+                  <div class="form-check">
+                    <input type="radio" id="marketing_both" name="marketing" value="both" />
+                    <label for="marketing_both">Both (Email &amp; SMS Text)</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="marketing_email" name="marketing" value="email" />
+                    <label for="marketing_email">Email only</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="marketing_sms" name="marketing" value="sms" />
+                    <label for="marketing_sms">SMS Text only</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Legal copy (per Jira, Marketing context) -->
+              <div class="form-group">
+                <p><small>Standard messaging rates may apply.</small></p>
+                <p><small>Marketing emails: additional notices may apply.</small></p>
+                <p>
+                  <button type="button" class="btn btn--link" id="viewTerms">Terms &amp; Conditions</button>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Paperless -->
+          <section class="card mt-4">
+            <div class="card__header"><h2 class="card__title">Paperless</h2></div>
+            <div class="card__body">
+              <fieldset class="form-group">
+                <legend class="form-label">Options</legend>
+
+                <div class="form-check">
+                  <input type="checkbox" id="paperless_billing" name="paperless_billing" />
+                  <label for="paperless_billing">Billing</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" id="paperless_policy" name="paperless_policy" />
+                  <label for="paperless_policy">Policy</label>
+                </div>
+              </fieldset>
+            </div>
+          </section>
+
+          <!-- Actions -->
+          <div class="form-group">
+            <button type="submit" class="btn btn--primary">Save</button>
+            <button type="button" class="btn btn--outline" id="cancelBtn">Cancel</button>
+            <div id="saveStatus" role="status" aria-live="polite" style="margin-top: 0.5rem"></div>
+          </div>
+        </form>
+      </main>
+    </div>
+    <!-- your existing scripts -->
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      (function () {
+        const form = document.getElementById("commPrefsForm");
+        const statusEl = document.getElementById("saveStatus");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const viewTermsBtn = document.getElementById("viewTerms");
+
+        // Prototype defaults (for Cancel → revert)
+        const defaults = {
+          memberEmail: document.getElementById("memberEmail").value,
+          memberMobile: document.getElementById("memberMobile").value,
+          policy: "email",
+          billing: "both",
+          claims: "both",
+          marketing: "email",
+          paperless_billing: true,
+          paperless_policy: false,
+        };
+
+        // Apply defaults to the form on load
+        function applyDefaults() {
+          setRadio("policy", defaults.policy);
+          setRadio("billing", defaults.billing);
+          setRadio("claims", defaults.claims);
+          setRadio("marketing", defaults.marketing);
+          document.getElementById("paperless_billing").checked = !!defaults.paperless_billing;
+          document.getElementById("paperless_policy").checked = !!defaults.paperless_policy;
+          clearStatus();
+        }
+
+        function setRadio(groupName, val) {
+          const n = form.querySelectorAll('input[type="radio"][name="' + groupName + '"]');
+          n.forEach((r) => (r.checked = r.value === val));
+        }
+
+        function getRadio(groupName) {
+          const r = form.querySelector('input[type="radio"][name="' + groupName + '"]:checked');
+          return r ? r.value : null;
+        }
+
+        function clearStatus() {
+          statusEl.textContent = "";
+        }
+
+        function showStatus(text) {
+          statusEl.textContent = text;
+          // fade out after a moment (prototype nicety)
+          setTimeout(() => {
+            if (statusEl.textContent === text) statusEl.textContent = "";
+          }, 2500);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Gather values (Jira-specified only)
+          const payload = {
+            memberEmail: document.getElementById("memberEmail").value,
+            memberMobile: document.getElementById("memberMobile").value,
+            notifications: {
+              policy: getRadio("policy"),
+              billing: getRadio("billing"),
+              claims: getRadio("claims"),
+              marketing: getRadio("marketing"),
+            },
+            paperless: {
+              billing: document.getElementById("paperless_billing").checked,
+              policy: document.getElementById("paperless_policy").checked,
+            },
+          };
+
+          console.log("[Comm Prefs] Save", payload); // prototype persistence
+          showStatus("Preferences saved.");
+          alert("Saved! (prototype)\n\n" + JSON.stringify(payload, null, 2));
+        });
+
+        cancelBtn.addEventListener("click", function () {
+          applyDefaults();
+          console.log("[Comm Prefs] Cancel → reverted to defaults");
+          showStatus("Changes discarded.");
+        });
+
+        viewTermsBtn.addEventListener("click", function () {
+          // Prototype: just log. In app, open modal or navigate.
+          console.log("[Comm Prefs] View Terms & Conditions (Marketing)");
+          alert("Terms & Conditions (prototype)");
+        });
+
+        // init
+        applyDefaults();
+      })();
+    </script>
+  </body>
+</html>
