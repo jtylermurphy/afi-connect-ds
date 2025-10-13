@@ -86,14 +86,14 @@
 .btn--secondary {
   --_bg: var(--color-primary-200);
   --_fg: var(--color-primary-700);
-  --_bd: transparent);
+  --_bd: transparent;
 }
 /* Secondary: mid-tint fill + border + subtle elevation */
 
 .btn--secondary:hover {
   background: var(--color-primary-200);
   border-color: #7eaee0;
-  filter:brightness(.95)
+  filter: brightness(0.95);
 }
 .btn--secondary:active {
   background: #b7d2f2;

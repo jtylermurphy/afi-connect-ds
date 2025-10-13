@@ -1,0 +1,84 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq__intro {
+  margin: 0;
+}
+
+.faq__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.faq__tab {
+  appearance: none;
+  border: 1px solid #c2d4e3;
+  background: #f5f8fb;
+  color: #004976;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.faq__tab:focus-visible {
+  outline: 2px solid #004976;
+  outline-offset: 2px;
+}
+
+.faq__tab--active {
+  background: #004976;
+  color: #fff;
+  border-color: #004976;
+}
+
+.faq__panel {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq__item {
+  border: 1px solid #e3ecf4;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+}
+
+.faq__item summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::marker,
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.faq__item summary span::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.faq__item[open] summary span::after {
+  transform: rotate(-180deg);
+}
+
+.faq__item p {
+  margin: 0.75rem 0 0;
+  color: #2f465a;
+}

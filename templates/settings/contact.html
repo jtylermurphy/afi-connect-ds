@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claims | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <style></style>
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+    <div class="site-content container">
+      <include data-include="nav"></include>
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Contact Us & Help</h1>
+          </div>
+        </header>
+        <div class="two-column-layout">
+          <div class="content">
+            <div class="card">
+              <div class="card__header">
+                <h2 class="card__title"><i class="fa-regular fa-sharp fa-circle-question"></i> Help Center</h2>
+              </div>
+              <div class="card__body">
+                <div class="faq" data-faq>
+                  <p class="faq__intro">
+                    Find quick answers to the most common AFI Connect questions. Choose a topic to see the FAQs for that
+                    subject.
+                  </p>
+                  <div class="faq__tabs" role="tablist" aria-label="Frequently asked questions by subject">
+                    <button
+                      type="button"
+                      class="faq__tab faq__tab--active"
+                      role="tab"
+                      aria-selected="true"
+                      id="faq-tab-policy"
+                      aria-controls="faq-panel-policy"
+                      data-faq-tab="policy"
+                      tabindex="0">
+                      Policy
+                    </button>
+                    <button
+                      type="button"
+                      class="faq__tab"
+                      role="tab"
+                      aria-selected="false"
+                      id="faq-tab-claims"
+                      aria-controls="faq-panel-claims"
+                      data-faq-tab="claims"
+                      tabindex="-1">
+                      Claims
+                    </button>
+                    <button
+                      type="button"
+                      class="faq__tab"
+                      role="tab"
+                      aria-selected="false"
+                      id="faq-tab-billing"
+                      aria-controls="faq-panel-billing"
+                      data-faq-tab="billing"
+                      tabindex="-1">
+                      Billing
+                    </button>
+                  </div>
+                  <div
+                    class="faq__panel"
+                    role="tabpanel"
+                    id="faq-panel-policy"
+                    aria-labelledby="faq-tab-policy"
+                    data-faq-panel="policy">
+                    <details class="faq__item" open>
+                      <summary><span>How do I update my policy information?</span></summary>
+                      <p>
+                        From the Policy Overview page select <strong>Edit Policy</strong>. You can update contact
+                        details, addresses, and coverage options. Changes take effect once you confirm and sign
+                        electronically.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>Can I add a new driver online?</span></summary>
+                      <p>
+                        Yes. Go to <strong>Drivers</strong> within your policy, choose <strong>Add Driver</strong>, and
+                        complete the required details. You will receive a confirmation email once the driver is
+                        approved.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>Where can I download my policy documents?</span></summary>
+                      <p>
+                        Open the <strong>Documents</strong> tab on your policy dashboard and select the PDF you need.
+                        Most policy documents are available to download immediately after your policy is issued.
+                      </p>
+                    </details>
+                  </div>
+                  <div
+                    class="faq__panel"
+                    role="tabpanel"
+                    id="faq-panel-claims"
+                    aria-labelledby="faq-tab-claims"
+                    data-faq-panel="claims"
+                    hidden>
+                    <details class="faq__item" open>
+                      <summary><span>How do I start a new claim?</span></summary>
+                      <p>
+                        Select <strong>File a Claim</strong> from the Claims hub and follow the guided steps. You can
+                        save progress at any point and return later from your dashboard.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>What information should I have ready?</span></summary>
+                      <p>
+                        Have the incident date, location, and any photos or police reports available. Uploading
+                        documents during your submission helps our team begin the review sooner.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>Where can I track my claim status?</span></summary>
+                      <p>
+                        Claim updates are posted on the <strong>My Claims</strong> page. You will also receive email
+                        notifications when we request more details or when a claim stage changes.
+                      </p>
+                    </details>
+                  </div>
+                  <div
+                    class="faq__panel"
+                    role="tabpanel"
+                    id="faq-panel-billing"
+                    aria-labelledby="faq-tab-billing"
+                    data-faq-panel="billing"
+                    hidden>
+                    <details class="faq__item" open>
+                      <summary><span>How do I change my payment method?</span></summary>
+                      <p>
+                        Visit <strong>Billing &amp; Payments</strong>, choose <strong>Payment Methods</strong>, and add
+                        a new card or bank account. Set the new method as default to use it for future payments.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>When are automatic payments processed?</span></summary>
+                      <p>
+                        AutoPay runs at 8:00 AM CST on your due date. If the due date falls on a weekend or holiday, the
+                        payment processes on the next business day.
+                      </p>
+                    </details>
+                    <details class="faq__item">
+                      <summary><span>Can I see past statements?</span></summary>
+                      <p>
+                        Yes. In <strong>Billing History</strong>, select any month to download or print the statement.
+                        The past 24 months of statements are stored automatically.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="aside">
+            <div class="card">
+              <div class="card__header"><h2 class="card__title">Contact Us</h2></div>
+              <div class="card__body">
+                <p>Use one of the links below to call us directly for help:</p>
+                <ul>
+                  <li>
+                    <a href="tel:1-800-123-4567" class="btn btn--link"><i class="fa-solid fa-phone"></i> My Policy</a>
+                  </li>
+                  <li>
+                    <a href="tel:1-800-987-6543" class="btn btn--link"><i class="fa-solid fa-phone"></i> Billing</a>
+                  </li>
+                  <li>
+                    <a href="tel:1-800-987-6543" class="btn btn--link"><i class="fa-solid fa-phone"></i> Quotes</a>
+                  </li>
+                  <li>
+                    <a href="tel:1-800-987-6543" class="btn btn--link"
+                      ><i class="fa-solid fa-phone"></i> Claim Assistance</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card__header"><h2 class="card__title">Report Technical Issues</h2></div>
+              <div class="card__body">
+                <p>Having technical issues with AFI Connect? Use the link below to get help.</p>
+                <p><a href="" class="btn btn--link">Report a technical issue</a></p>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card__header"><h2 class="card__title">Legal</h2></div>
+              <div class="card__body">
+                <ul>
+                  <li>
+                    <a href="#" class="btn btn--link">AFI Mission Statement</a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn btn--link">AFI Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn btn--link">AFI Security Policy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const faq = document.querySelector("[data-faq]");
+        if (!faq) return;
+
+        const tabs = Array.from(faq.querySelectorAll("[data-faq-tab]"));
+        const panels = Array.from(faq.querySelectorAll("[data-faq-panel]"));
+
+        const activate = (tab) => {
+          const target = tab.dataset.faqTab;
+          tabs.forEach((button) => {
+            const isActive = button === tab;
+            button.classList.toggle("faq__tab--active", isActive);
+            button.setAttribute("aria-selected", String(isActive));
+            button.setAttribute("tabindex", isActive ? "0" : "-1");
+          });
+
+          panels.forEach((panel) => {
+            const show = panel.dataset.faqPanel === target;
+            panel.hidden = !show;
+            if (show) {
+              const openItem = panel.querySelector(".faq__item");
+              if (openItem) openItem.setAttribute("open", "open");
+            } else {
+              panel.querySelectorAll(".faq__item").forEach((item) => item.removeAttribute("open"));
+            }
+          });
+        };
+
+        const handleKeydown = (event) => {
+          const { key, currentTarget } = event;
+          if (key !== "ArrowLeft" && key !== "ArrowRight") return;
+
+          event.preventDefault();
+          const currentIndex = tabs.indexOf(currentTarget);
+          const nextIndex = (currentIndex + (key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+          const nextTab = tabs[nextIndex];
+          nextTab.focus();
+          activate(nextTab);
+        };
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => activate(tab));
+          tab.addEventListener("keydown", handleKeydown);
+        });
+
+        const defaultTab = tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0];
+        if (defaultTab) {
+          activate(defaultTab);
+        }
+      });
+    </script>
+  </body>
+</html>

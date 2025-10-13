@@ -51,84 +51,89 @@
               </div>
 
               <!-- Notification matrix: Policy / Billing / Claims / Marketing -->
-              <fieldset class="form-group">
-                <legend class="form-label">Notifications</legend>
 
-                <!-- Policy -->
-                <div class="form-group form-group--choices">
-                  <label class="form-label">Policy</label>
-                  <div class="form-check">
-                    <input type="radio" id="policy_both" name="policy" value="both" />
-                    <label for="policy_both">Both (Email &amp; SMS Text)</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="policy_email" name="policy" value="email" />
-                    <label for="policy_email">Email only</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="policy_sms" name="policy" value="sms" />
-                    <label for="policy_sms">SMS Text only</label>
-                  </div>
-                </div>
+              <h3>Notifications</h3>
+              <p>
+                Choose how you’d like to stay updated. You can receive alerts by email, text message (SMS), or both.
+                Update your preferences anytime to make sure you never miss important notifications.
+              </p>
 
-                <!-- Billing -->
-                <div class="form-group form-group--choices">
-                  <label class="form-label">Billing</label>
-                  <div class="form-check">
-                    <input type="radio" id="billing_both" name="billing" value="both" />
-                    <label for="billing_both">Both (Email &amp; SMS Text)</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="billing_email" name="billing" value="email" />
-                    <label for="billing_email">Email only</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="billing_sms" name="billing" value="sms" />
-                    <label for="billing_sms">SMS Text only</label>
-                  </div>
+              <!-- Policy -->
+              <div class="form-group form-group--choices">
+                <label class="form-label">Policy</label>
+                <div class="form-check">
+                  <input type="radio" id="policy_both" name="policy" value="both" />
+                  <label for="policy_both">Both (Email &amp; SMS Text)</label>
                 </div>
+                <div class="form-check">
+                  <input type="radio" id="policy_email" name="policy" value="email" />
+                  <label for="policy_email">Email only</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="policy_sms" name="policy" value="sms" />
+                  <label for="policy_sms">SMS Text only</label>
+                </div>
+              </div>
 
-                <!-- Claims -->
-                <div class="form-group form-group--choices">
-                  <label class="form-label">Claims</label>
-                  <div class="form-check">
-                    <input type="radio" id="claims_both" name="claims" value="both" />
-                    <label for="claims_both">Both (Email &amp; SMS Text)</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="claims_email" name="claims" value="email" />
-                    <label for="claims_email">Email only</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="claims_sms" name="claims" value="sms" />
-                    <label for="claims_sms">SMS Text only</label>
-                  </div>
+              <!-- Billing -->
+              <div class="form-group form-group--choices">
+                <label class="form-label">Billing</label>
+                <div class="form-check">
+                  <input type="radio" id="billing_both" name="billing" value="both" />
+                  <label for="billing_both">Both (Email &amp; SMS Text)</label>
                 </div>
+                <div class="form-check">
+                  <input type="radio" id="billing_email" name="billing" value="email" />
+                  <label for="billing_email">Email only</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="billing_sms" name="billing" value="sms" />
+                  <label for="billing_sms">SMS Text only</label>
+                </div>
+              </div>
 
-                <!-- Marketing -->
-                <div class="form-group form-group--choices">
-                  <label class="form-label">Marketing</label>
-                  <div class="form-check">
-                    <input type="radio" id="marketing_both" name="marketing" value="both" />
-                    <label for="marketing_both">Both (Email &amp; SMS Text)</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="marketing_email" name="marketing" value="email" />
-                    <label for="marketing_email">Email only</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" id="marketing_sms" name="marketing" value="sms" />
-                    <label for="marketing_sms">SMS Text only</label>
-                  </div>
+              <!-- Claims -->
+              <div class="form-group form-group--choices">
+                <label class="form-label">Claims</label>
+                <div class="form-check">
+                  <input type="radio" id="claims_both" name="claims" value="both" />
+                  <label for="claims_both">Both (Email &amp; SMS Text)</label>
                 </div>
-              </fieldset>
+                <div class="form-check">
+                  <input type="radio" id="claims_email" name="claims" value="email" />
+                  <label for="claims_email">Email only</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="claims_sms" name="claims" value="sms" />
+                  <label for="claims_sms">SMS Text only</label>
+                </div>
+              </div>
+
+              <!-- Marketing -->
+              <div class="form-group form-group--choices">
+                <label class="form-label">Marketing</label>
+                <div class="form-check">
+                  <input type="radio" id="marketing_both" name="marketing" value="both" />
+                  <label for="marketing_both">Both (Email &amp; SMS Text)</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="marketing_email" name="marketing" value="email" />
+                  <label for="marketing_email">Email only</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="marketing_sms" name="marketing" value="sms" />
+                  <label for="marketing_sms">SMS Text only</label>
+                </div>
+              </div>
 
               <!-- Legal copy (per Jira, Marketing context) -->
               <div class="form-group">
                 <p><small>Standard messaging rates may apply.</small></p>
                 <p><small>Marketing emails: additional notices may apply.</small></p>
                 <p>
-                  <button type="button" class="btn btn--link" id="viewTerms">Terms &amp; Conditions</button>
+                  <a href="https://afi.org/About-AFI/Terms-of-Use" type="button" class="btn btn--link" id="viewTerms"
+                    >Terms &amp; Conditions</a
+                  >
                 </p>
               </div>
             </div>
@@ -138,19 +143,21 @@
           <section class="card mt-4">
             <div class="card__header"><h2 class="card__title">Paperless</h2></div>
             <div class="card__body">
-              <fieldset class="form-group">
-                <legend class="form-label">Options</legend>
+              <p>
+                Go paperless and receive your policy and billing information electronically instead of by mail. Choose
+                which documents you’d like to receive digitally—or select both to keep everything in one convenient
+                place.
+              </p>
 
-                <div class="form-check">
-                  <input type="checkbox" id="paperless_billing" name="paperless_billing" />
-                  <label for="paperless_billing">Billing</label>
-                </div>
+              <div class="form-check">
+                <input type="checkbox" id="paperless_billing" name="paperless_billing" />
+                <label for="paperless_billing">Billing</label>
+              </div>
 
-                <div class="form-check">
-                  <input type="checkbox" id="paperless_policy" name="paperless_policy" />
-                  <label for="paperless_policy">Policy</label>
-                </div>
-              </fieldset>
+              <div class="form-check">
+                <input type="checkbox" id="paperless_policy" name="paperless_policy" />
+                <label for="paperless_policy">Policy</label>
+              </div>
             </div>
           </section>
 
