@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Settings | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="settings" data-include="nav"></include>
+
+      <main class="layout__main">
+        <header class="page-header">
+          <div class="page-header__info">
+            <p class="breadcrumb"><a href="index.html" aria-label="Back to Settings">← Settings</a></p>
+            <h1 class="page-header__title">Security Settings</h1>
+            <p class="page-header__subtitle">
+              Update your sign-in details and verify your security questions to keep your account protected.
+            </p>
+          </div>
+        </header>
+
+        <form class="security-settings" novalidate>
+          <section class="card">
+            <div class="card__header">
+              <h2 class="card__title">Account Information</h2>
+            </div>
+            <div class="card__body">
+              <div class="form-group">
+                <label class="form-label" for="security-username">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="security-username"
+                  name="username"
+                  autocomplete="username" />
+              </div>
+            </div>
+          </section>
+
+          <section class="card mt-4">
+            <div class="card__header">
+              <h2 class="card__title">Security Questions</h2>
+            </div>
+            <div class="card__body">
+              <div class="form-group">
+                <label class="form-label" for="security-question-1">Security Question 1</label>
+                <select class="form-control form-control--select" id="security-question-1" name="securityQuestion1">
+                  <option value="" hidden>Select a question…</option>
+                  <option value="childhood-friend">What is the last name of your favorite childhood friend?</option>
+                  <option value="street">What street did you grow up on?</option>
+                  <option value="grandfather-nickname">What was the nickname of your grandfather?</option>
+                  <option value="favorite-pet">What is the name of your favorite pet?</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="security-answer-1">Answer #1</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="security-answer-1"
+                  name="securityAnswer1"
+                  autocomplete="off" />
+              </div>
+
+              <hr />
+
+              <div class="form-group">
+                <label class="form-label" for="security-question-2">Security Question 2</label>
+                <select class="form-control form-control--select" id="security-question-2" name="securityQuestion2">
+                  <option value="" hidden>Select a question…</option>
+                  <option value="teacher-last-name">
+                    What was the last name of your favorite grade school teacher?
+                  </option>
+                  <option value="maternal-grandmother">What is your maternal grandmother's maiden name?</option>
+                  <option value="favorite-movie">What is your favorite movie?</option>
+                  <option value="father-middle-name">What is your father's middle name?</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="security-answer-2">Answer #2</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="security-answer-2"
+                  name="securityAnswer2"
+                  autocomplete="off" />
+              </div>
+            </div>
+          </section>
+
+          <section class="card mt-4">
+            <div class="card__header">
+              <h2 class="card__title">Password</h2>
+            </div>
+            <div class="card__body">
+              <div class="form-group">
+                <label class="form-label" for="security-current-password">Current Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="security-current-password"
+                  name="currentPassword"
+                  autocomplete="current-password" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="security-new-password">New Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="security-new-password"
+                  name="newPassword"
+                  autocomplete="new-password" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="security-confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="security-confirm-password"
+                  name="confirmPassword"
+                  autocomplete="new-password" />
+              </div>
+            </div>
+          </section>
+
+          <div class="form-group mt-4">
+            <button type="submit" class="btn btn--primary">Save</button>
+            <button type="button" class="btn btn--outline">Cancel</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

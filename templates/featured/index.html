@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featured | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <style>
+      main {
+        container-type: inline-size;
+      }
+      .featured-section {
+        margin-top: 2.5rem;
+      }
+
+      .featured-section:first-of-type {
+        margin-top: 0;
+      }
+
+      .featured-grid {
+        list-style: none;
+        display: grid;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      @media (min-width: 640px) {
+        .featured-grid {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+      }
+
+      .featured-card,
+      .featured-split-card {
+        display: block;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        background: linear-gradient(160deg, rgba(0, 73, 118, 0.08), rgba(255, 255, 255, 0.95));
+        box-shadow: 0 12px 24px rgba(15, 54, 86, 0.12);
+        color: inherit;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+      }
+
+      .featured-card:hover,
+      .featured-card:focus-visible,
+      .featured-split-card:hover,
+      .featured-split-card:focus-visible {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(15, 54, 86, 0.18);
+        background: linear-gradient(160deg, rgba(0, 73, 118, 0.12), rgba(255, 255, 255, 0.98));
+      }
+
+      .featured-card:focus-visible,
+      .featured-split-card:focus-visible {
+        outline: 3px solid #004976;
+        outline-offset: 3px;
+      }
+
+      .featured-card .icon,
+      .featured-split-card .icon {
+        display: inline-flex;
+        width: 2.75rem;
+        height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.85rem;
+        background-color: rgba(0, 73, 118, 0.12);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .featured-card h3,
+      .featured-split-card h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.1rem;
+        color: #0f3656;
+      }
+
+      .featured-card p,
+      .featured-split-card p {
+        margin: 0;
+        color: #37566e;
+      }
+
+      .two-column {
+        display: grid;
+        gap: 1.75rem;
+        margin: 2.5rem 0 0;
+      }
+
+      @media (min-width: 768px) {
+        .two-column {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .two-thirds-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .two-thirds-grid {
+          grid-template-columns: 2fr 1fr; /* 2/3 and 1/3 */
+          align-items: start;
+        }
+      }
+
+      @container (max-width: 599px) {
+        .two-thirds-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="featured" data-include="nav"></include>
+
+      <main class="layout__main" id="featured" aria-labelledby="featured-title">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title" id="featured-title">Featured</h1>
+          </div>
+        </header>
+
+        <div class="two-thirds-grid">
+          <div class="card">
+            <div class="card__header">
+              <h2 class="card__title">Featured Article</h2>
+            </div>
+            <div class="card__body">
+              <a class="card__image" style="display: block; margin-top: 1rem" href="#"
+                ><img src="images/article-image.jpg" alt="[article title]"
+              /></a>
+              <h2 style="font-weight: bold">6 ways to prepare for severe weather</h2>
+              <p style="font-size: 1rem">
+                Severe weather varies based on where you live, but the preparation is similar whether you are facing
+                hurricanes, tornadoes, storms, or even wildfires. Preparing well ahead of time will save you stress and
+                headaches when severe weather looms.
+              </p>
+              <a href="#" class="btn btn--primary"
+                >Read more on AFI.org <i class="fa-sharp fa-regular fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card__header"><h2 class="card__title">Share Feedback</h2></div>
+              <div class="card__body">
+                <p style="font-size: 1rem">
+                  Let us know how we are doing. Share feedback about your recent experience with AFI.
+                </p>
+                <a href="#" class="btn btn--primary btn--block">Share</a>
+              </div>
+            </div>
+            <div
+              style="
+                background: linear-gradient(120deg, #cb2c30, #881b26);
+                padding: 1rem;
+                color: #fff;
+                margin-top: 1rem;
+              ">
+              <h2 style="margin: 0.5rem 0; font-weight: 700; border-bottom: 2px solid #fff; padding-bottom: 0.5rem">
+                Refer a friend to AFI
+              </h2>
+              <p style="color: #fff; font-weight: 600; font-size: 1rem; margin: 0.5rem 0 1.5rem">
+                When satisfied policyholders send us the names of prospective new members, AFI&nbsp;grows.
+              </p>
+              <a href="referral.html" class="btn btn--primary btn--block">Refer a friend</a>
+            </div>
+          </div>
+        </div>
+
+        <section class="featured-section" aria-labelledby="featured-essentials-title">
+          <div class="two-column" role="list"></div>
+        </section>
+
+        <!-- Action-oriented tools prompting members to engage immediately -->
+
+        <!-- Learning resources for members exploring policy knowledge and FAQs -->
+        <section class="featured-section" aria-labelledby="featured-learn-title">
+          <h2 id="featured-learn-title">Learn &amp; Explore</h2>
+          <ul class="featured-grid">
+            <li>
+              <a
+                href="/knowledge"
+                data-type="resource"
+                aria-label="Visit Knowledge on Demand for insurance guides"
+                class="featured-card">
+                <span aria-hidden="true" class="icon">i</span>
+                <h3>Knowledge on Demand</h3>
+                <p>Browse quick guides that explain coverage, claims, and more in plain language.</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/faqs"
+                data-type="resource"
+                aria-label="Review frequently asked questions for AFI Connect"
+                class="featured-card">
+                <span aria-hidden="true" class="icon">?</span>
+                <h3>FAQs</h3>
+                <p>Get answers to common questions about using AFI Connect across devices.</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Checklist resources supporting members through key life events -->
+        <section class="featured-section" aria-labelledby="featured-checklists-title">
+          <h2 id="featured-checklists-title">Checklists</h2>
+          <ul class="featured-grid">
+            <li>
+              <a
+                href="/checklists/pcs"
+                data-type="checklist"
+                aria-label="Review the PCS move preparation checklist"
+                class="featured-card">
+                <span aria-hidden="true" class="icon">#</span>
+                <h3>PCS Move Checklist</h3>
+                <p>Step through every task to keep your relocation organized and stress-free.</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/checklists/renovations"
+                data-type="checklist"
+                aria-label="Review the home renovations planning checklist"
+                class="featured-card">
+                <span aria-hidden="true" class="icon">=</span>
+                <h3>Renovations Checklist</h3>
+                <p>Plan updates, timelines, and permits before starting your next project.</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Promotional placements featuring AFI offerings and partners -->
+        <section class="featured-section" aria-labelledby="featured-promotions-title">
+          <h2 id="featured-promotions-title">Promotions &amp; Ads</h2>
+          <ul class="featured-grid">
+            <li>
+              <a
+                href="/quote/auto"
+                data-type="ad"
+                aria-label="Start an auto quote for AFI coverage"
+                class="featured-card">
+                <span aria-hidden="true" class="icon">$</span>
+                <h3>AFI Auto Coverage</h3>
+                <p>See how our auto protection adjusts with your mission, travel, and family needs.</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-type="ad" aria-label="Explore our upcoming partner offer" class="featured-card">
+                <span aria-hidden="true" class="icon">@</span>
+                <h3>Partner Offer</h3>
+                <p>Stay tuned for exclusive savings from a trusted AFI partner coming soon.</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <!-- your existing scripts -->
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,10 +1,13 @@
-.back-link {
+.back-link,
+.breadcrumb {
   margin: 0 0 0.25rem;
 }
-.back-link a {
+.back-link a,
+.breadcrumb a {
   text-decoration: none;
 }
-.back-link a:focus-visible {
+.back-link a:focus-visible,
+.breadcrumb a:focus-visible {
   outline: 2px solid var(--ads-color-focus, #2563eb);
   outline-offset: 2px;
   border-radius: 0.25rem;

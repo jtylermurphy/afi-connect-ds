@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings | AFI Connect</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <style>
+      .settings-menu {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 640px) {
+        .settings-menu {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+      }
+
+      .settings-menu__link {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.5rem;
+        text-decoration: none;
+        color: inherit;
+        background: #fff;
+        border-radius: 1rem;
+        box-shadow: 0 12px 24px rgba(15, 54, 86, 0.12);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .settings-menu__link:hover,
+      .settings-menu__link:focus-visible {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(15, 54, 86, 0.18);
+        outline: none;
+      }
+
+      .settings-menu__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 0.85rem;
+        background-color: rgba(0, 73, 118, 0.12);
+        color: #004976;
+        font-size: 1.25rem;
+      }
+
+      .settings-menu__title {
+        margin: 0;
+        font-size: 1.125rem;
+        color: #0f3656;
+      }
+
+      .settings-menu__desc {
+        margin: 0;
+        color: #37566e;
+        line-height: 1.4;
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/bc49f81a82.js" crossorigin="anonymous"></script>
+  </head>
+  <body data-layout="page">
+    <include data-include="site-header"></include>
+
+    <div class="site-content container">
+      <include data-active="settings" data-include="nav"></include>
+
+      <main class="layout__main" aria-labelledby="settings-title">
+        <header class="page-header">
+          <div class="page-header__info">
+            <h1 class="page-header__title" id="settings-title">Settings</h1>
+            <p class="page-header__subtitle">
+              Manage your profile, communication preferences, account security, and ways to contact AFI.
+            </p>
+          </div>
+        </header>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem">
+          <a class="card" href="profile.html">
+            <div class="card__header">
+              <h2 class="card__title"><i class="fa-regular fa-user"></i> Profile Settings</h2>
+            </div>
+            <div class="card__body">
+              <p>Review and update member details, addresses, and saved contact methods.</p>
+            </div>
+          </a>
+
+          <a class="card" href="communications.html">
+            <div class="card__header">
+              <h2 class="card__title"><i class="fa-regular fa-bell"></i> Communication Settings</h2>
+            </div>
+            <div class="card__body">
+              <p>Choose how AFI connects with you for policy alerts, billing, and updates.</p>
+            </div>
+          </a>
+
+          <a class="card" href="security.html">
+            <div class="card__header">
+              <h2 class="card__title"><i class="fa-solid fa-shield-halved"></i> Security Settings</h2>
+            </div>
+            <div class="card__body">
+              <p>Change your password, and security questions.</p>
+            </div>
+          </a>
+
+          <a class="card" href="contact.html">
+            <div class="card__header">
+              <h2 class="card__title"><i class="fa-regular fa-envelope-open-text"></i> Contact Us</h2>
+            </div>
+            <div class="card__body">
+              <p>Get quick help, find FAQs, or reach out to AFI support directly.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- <section aria-label="Settings menu">
+          <div class="settings-menu">
+            <a class="settings-menu__link" href="profile.html">
+              <span class="settings-menu__icon" aria-hidden="true">
+                <i class="fa-regular fa-user"></i>
+              </span>
+              <div>
+                <h2 class="settings-menu__title">Profile Settings</h2>
+                <p class="settings-menu__desc">
+                  Review and update member details, addresses, and saved contact methods.
+                </p>
+              </div>
+            </a>
+
+            <a class="settings-menu__link" href="communications.html">
+              <span class="settings-menu__icon" aria-hidden="true">
+                <i class="fa-regular fa-envelope-open-text"></i>
+              </span>
+              <div>
+                <h2 class="settings-menu__title">Communication Settings</h2>
+                <p class="settings-menu__desc">
+                  Choose how AFI connects with you for policy alerts, billing, and updates.
+                </p>
+              </div>
+            </a>
+
+            <a class="settings-menu__link" href="security.html">
+              <span class="settings-menu__icon" aria-hidden="true">
+                <i class="fa-solid fa-shield-halved"></i>
+              </span>
+              <div>
+                <h2 class="settings-menu__title">Security Settings</h2>
+                <p class="settings-menu__desc">
+                  Change your password, manage trusted devices, and set up multifactor security.
+                </p>
+              </div>
+            </a>
+
+            <a class="settings-menu__link" href="contact.html">
+              <span class="settings-menu__icon" aria-hidden="true">
+                <i class="fa-regular fa-life-ring"></i>
+              </span>
+              <div>
+                <h2 class="settings-menu__title">Contact Us</h2>
+                <p class="settings-menu__desc">Get quick help, find FAQs, or reach out to AFI support directly.</p>
+              </div>
+            </a>
+          </div>
+        </section> -->
+      </main>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

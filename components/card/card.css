@@ -36,3 +36,12 @@
 
   padding-top: 1rem;
 }
+
+a.card {
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.card:hover {
+  box-shadow: 0 12px 24px rgba(15, 54, 86, 0.12);
+}

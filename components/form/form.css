@@ -39,6 +39,12 @@
   --afids-label-size: 0.875rem;
   --afids-hint-size: 0.8125rem;
 }
+.form-row {
+  display: flex;
+  gap: var(--afids-control-gap);
+  flex-wrap: wrap;
+  width: 100%;
+}
 
 .form-group {
   margin-block: var(--afids-space-5);

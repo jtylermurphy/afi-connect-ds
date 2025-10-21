@@ -15,9 +15,12 @@
       <main class="layout__main">
         <header class="page-header">
           <div class="page-header__info">
+            <p class="breadcrumb"><a href="index.html" aria-label="Back to Settings">← Settings</a></p>
+
             <h1 class="page-header__title">Contact Us & Help</h1>
           </div>
         </header>
+
         <div class="two-column-layout">
           <div class="content">
             <div class="card">
@@ -162,8 +165,8 @@
               <div class="card__header"><h2 class="card__title">Contact Us</h2></div>
               <div class="card__body">
                 <p>Use one of the links below to call us directly for help:</p>
-                <ul>
-                  <li>
+                <ul style="padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem">
+                  <li style="">
                     <a href="tel:1-800-123-4567" class="btn btn--link"><i class="fa-solid fa-phone"></i> My Policy</a>
                   </li>
                   <li>
@@ -190,7 +193,7 @@
             <div class="card mt-4">
               <div class="card__header"><h2 class="card__title">Legal</h2></div>
               <div class="card__body">
-                <ul>
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem">
                   <li>
                     <a href="#" class="btn btn--link">AFI Mission Statement</a>
                   </li>
