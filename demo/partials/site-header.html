@@ -30,11 +30,16 @@
           aria-expanded="false"
           aria-controls="settings-menu">
           <div class="icon-container">
-            <i class="fa-sharp fa-regular fa-gear"></i>
+            <i class="fa-regular fa-user"></i>
           </div>
         </button>
+
         <div class="menu__panel" role="menu" hidden>
-          <a href="/templates/settings/profile.html" class="menu__item" role="menuitem">
+          <a href="/templates/settings/" class="menu__item" role="menuitem">
+            <span class="menu__icon" aria-hidden="true"><i class="fa-sharp fa-regular fa-gear"></i></span>
+            <span class="menu__label">Settings</span></a
+          >
+          <!-- <a href="/templates/settings/profile.html" class="menu__item" role="menuitem">
             <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-solid fa-user"></i></span>
             <span class="menu__label">Profile Settings</span>
           </a>
@@ -50,7 +55,7 @@
           <a href="/templates/settings/contact.html" class="menu__item" role="menuitem">
             <span class="menu__icon" aria-hidden="true"><i class="fa-regular fa-envelope-open-text"></i></span>
             <span class="menu__label">Contact Us & Help</span>
-          </a>
+          </a> -->
           <div class="menu__divider" role="separator" aria-orientation="horizontal"></div>
 
           <button type="button" class="menu__item menu__item--danger" role="menuitem" data-action="signout">
