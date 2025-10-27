@@ -18,91 +18,100 @@
             class="page-header__info"
             style="width: 100%; display: flex; align-items: center; justify-content: space-between">
             <h1 class="page-header__title">Your Policies</h1>
-            <div class="action">
-              <button class="btn btn--link" style="font-size: 0.8rem !important">
-                <i class="fa-regular fa-sharp fa-pencil"></i> Request Changes
-              </button>
-            </div>
           </div>
         </header>
 
-        <section class="alerts" role="region" aria-label="Notifications">
-          <div class="alert alert--default" data-alert>
-            <div class="alert__content">
-              <div class="alert__title">Upcoming Payment</div>
-              <div class="alert__description">Your auto policy payment is due soon.</div>
-            </div>
-            <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+        <div class="two-column-layout">
+          <div class="content">
+            <section class="alerts" role="region" aria-label="Notifications">
+              <div class="alert alert--default" data-alert>
+                <div class="alert__content">
+                  <div class="alert__title">Upcoming Payment</div>
+                  <div class="alert__description">Your auto policy payment is due soon.</div>
+                </div>
+                <button class="alert__close" aria-label="Dismiss alert" data-alert-close>&times;</button>
+              </div>
+            </section>
+
+            <section class="policies-container">
+              <a href="detail.html" class="policy-card policy-card--active">
+                <div class="policy-card__icon">
+                  <i class="fa-regular fa-sharp fa-house"></i>
+                </div>
+                <div class="policy-card__content">
+                  <div class="policy-card__meta">
+                    <span class="policy-card__type">Homeowner</span>
+                    <span class="policy-card__number">(HO123456789)</span>
+                    <div class="tag tag--error">Past Due</div>
+                  </div>
+
+                  <div class="policy-card__address">
+                    12500 Knollwood Dr,<br />
+                    Leavenworth, KS 66048-7259
+                  </div>
+                  <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                </div>
+                <div class="policy-card__chevron">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </a>
+
+              <a href="detail.html" class="policy-card policy-card--active">
+                <div class="policy-card__icon">
+                  <i class="fa-regular fa-sharp fa-car"></i>
+                </div>
+                <div class="policy-card__content">
+                  <div class="policy-card__meta">
+                    <span class="policy-card__type">Auto</span>
+                    <span class="policy-card__number">(A123456789)</span>
+                    <div class="tag tag--success">Active</div>
+                  </div>
+
+                  <div class="policy-card__address">
+                    12500 Knollwood Dr,<br />
+                    Leavenworth, KS 66048-7259
+                  </div>
+                  <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                </div>
+                <div class="policy-card__chevron">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </a>
+
+              <a href="detail.html" class="policy-card policy-card--active">
+                <div class="policy-card__icon">
+                  <i class="fa-regular fa-sharp fa-house"></i>
+                </div>
+                <div class="policy-card__content">
+                  <div class="policy-card__meta">
+                    <span class="policy-card__type">Homeowner</span>
+                    <span class="policy-card__number">(HO123456789)</span>
+                    <div class="tag tag--info">Upcoming</div>
+                  </div>
+
+                  <div class="policy-card__address">
+                    12500 Knollwood Dr,<br />
+                    Leavenworth, KS 66048-7259
+                  </div>
+                  <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
+                </div>
+                <div class="policy-card__chevron">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </a>
+            </section>
           </div>
-        </section>
-
-        <section class="policies-container">
-          <a href="detail.html" class="policy-card policy-card--active">
-            <div class="policy-card__icon">
-              <i class="fa-regular fa-sharp fa-house"></i>
-            </div>
-            <div class="policy-card__content">
-              <div class="policy-card__meta">
-                <span class="policy-card__type">Homeowner</span>
-                <span class="policy-card__number">(HO123456789)</span>
-                <div class="tag tag--error">Past Due</div>
+          <aside>
+            <div class="card">
+              <div class="card__body">
+                <a href="/templates/fnol/step1.html" class="btn btn--primary">Request Changes</a>
+                <p class="mt-4">
+                  If we can assist you now with a change, please call <a href="tel:+19999999999">999-999-9999</a>.
+                </p>
               </div>
-
-              <div class="policy-card__address">
-                12500 Knollwood Dr,<br />
-                Leavenworth, KS 66048-7259
-              </div>
-              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
             </div>
-            <div class="policy-card__chevron">
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </a>
-
-          <a href="detail.html" class="policy-card policy-card--active">
-            <div class="policy-card__icon">
-              <i class="fa-regular fa-sharp fa-car"></i>
-            </div>
-            <div class="policy-card__content">
-              <div class="policy-card__meta">
-                <span class="policy-card__type">Auto</span>
-                <span class="policy-card__number">(A123456789)</span>
-                <div class="tag tag--success">Active</div>
-              </div>
-
-              <div class="policy-card__address">
-                12500 Knollwood Dr,<br />
-                Leavenworth, KS 66048-7259
-              </div>
-              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
-            </div>
-            <div class="policy-card__chevron">
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </a>
-
-          <a href="detail.html" class="policy-card policy-card--active">
-            <div class="policy-card__icon">
-              <i class="fa-regular fa-sharp fa-house"></i>
-            </div>
-            <div class="policy-card__content">
-              <div class="policy-card__meta">
-                <span class="policy-card__type">Homeowner</span>
-                <span class="policy-card__number">(HO123456789)</span>
-                <div class="tag tag--info">Upcoming</div>
-              </div>
-
-              <div class="policy-card__address">
-                12500 Knollwood Dr,<br />
-                Leavenworth, KS 66048-7259
-              </div>
-              <div class="policy-card__term">Mar 1, 2025 – Feb 28, 2026</div>
-            </div>
-            <div class="policy-card__chevron">
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-          </a>
-        </section>
+          </aside>
+        </div>
       </main>
     </div>
     <script type="module" src="/js/main.js"></script>
